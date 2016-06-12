@@ -1,0 +1,53 @@
+## Overview
+
+This package adds more flexibility to ajax request and return, by which making the reply in dynamically set format. 
+ 	
+
+Ajax request would have the following parameters:
+	ajxr=xform
+	ajxr-rqid=&lt;this will be request type id but return page also associated with this$gt; 
+
+Server side implementation is in struts.xform package. 
+
+
+## The flow simplified. 
+
+condtion: configs in /config/xform.properties to set basic template and xform class. 
+
+web: send ajxr=xform & ajxr-rqid to use this. 
+  
+server part will process it. 
+
+
+## configs are
+
+xform.properties assocates the id to the following properties
+
+user-manage-default.template=/xform/user-manage-default.xml
+user-manage-default.class=com.autosite.struts.xform.impl.DefaultBasicXform
+
+--template is the html/xml file 
+--class is the processor. 
+
+
+## manager class is DefaultXformManager
+
+## Sample implementation in generated codes are
+
+            String ajxrRqid     = getAjaxSubCommand(request, "rqid");
+            String ajxrXformId  = getAjaxSubCommand(request, "xform-id");
+            m_logger.debug("Ajax xform Processing --------> " + ajxrRqid);
+            
+            List list = prepareReturnData(request, target);
+
+            AutositeXform xfmgr = DefaultXformManager.getInstance().getXform(ajxrRqid);
+            try {
+                ret.put("__value", xfmgr.transform(list)); //DO TRANSFORM!! 
+            }
+            catch (Exception e) {
+                ret.put("__value", new DefaultErrorXform().transform(list)); //DO TRANSFORM!! 
+            }
+
+
+## then autosite returns the strings of transformed from internal values objects or list of objects in html any other format like JSON
+

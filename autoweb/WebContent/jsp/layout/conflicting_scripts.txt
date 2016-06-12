@@ -1,0 +1,137 @@
+<!-- ############ DDSMOOTHMENU ############## -->
+
+<!-- link rel="stylesheet" type="text/css" href="/menuscripts/ddsmoothmenu/ddsmoothmenu.css" /-->
+<!-- link rel="stylesheet" type="text/css" href="/menuscripts/ddsmoothmenu/ddsmoothmenu-v.css" /-->
+
+<!-- script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script -->
+<!-- 
+<script type="text/javascript" src="/menuscripts/ddsmoothmenu/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu1", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'site29ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu2", //Menu DIV id
+	orientation: 'v', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'site29ddsmoothmenu-v', //class added to menu's outer DIV
+	//customtheme: ["#804000", "#482400"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+ -->
+
+<!-- ############ DDSMOOTHMENU ############## 
+
+<link rel="stylesheet" type="text/css" href="/menuscripts/ddlevels/ddlevelsmenu-base.css" />
+<link rel="stylesheet" type="text/css" href="/menuscripts/ddlevels/ddlevelsmenu-topbar.css" />
+<link rel="stylesheet" type="text/css" href="/menuscripts/ddlevels/ddlevelsmenu-sidebar.css" />
+
+<script type="text/javascript" src="/menuscripts/ddlevels/ddlevelsmenu.js">
+
+/***********************************************
+* All Levels Navigational Menu- (c) Dynamic Drive DHTML code library (http://www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+-->
+
+<!-- 
+
+<link rel="stylesheet" type="text/css" media="screen" href="/menuscripts/superfish/superfish.css" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="/menuscripts/superfish/superfish-vertical.css" /> 
+ 
+<script type="text/javascript" src="/menuscripts/superfish/hoverIntent.js"></script> 
+<script type="text/javascript" src="/menuscripts/superfish/superfish.js"></script> 
+ 
+<script type="text/javascript"> 
+ 
+    $(document).ready(function(){ 
+        $("ul.sf-menu").superfish({ 
+            animation: {height:'show'},   // slide-down effect without fade-in 
+            delay:     1200               // 1.2 second delay on mouseout 
+        }); 
+    }); 
+ 
+</script>
+ -->
+
+
+
+<!-- ======================== this section is the only one needed to run Shadowbox ======================== 
+<link rel="stylesheet" type="text/css" href="js/shadowbox/shadowbox.css">
+<script type="text/javascript" src="js/shadowbox/shadowbox.js"></script>
+<script type="text/javascript" src="js/shadowbox/demo.js"></script>
+
+<script type="text/javascript">
+Shadowbox.init({
+    language: 'en',
+    players:  ['img', 'html', 'iframe', 'qt', 'wmp', 'swf', 'flv']
+});
+</script -->
+
+
+<!-- ======================== this section is the only one needed to run Color box ======================== 
+
+<script type="text/javascript" src="js/colorbox/jquery.colorbox.js"></script>
+
+<link type="text/css" media="screen" rel="stylesheet" href="js/colorbox/colorbox.css" />
+-->
+
+<!--[if IE]>
+<link type="text/css" media="screen" rel="stylesheet" href="colorbox-ie.css" title="example" />
+<![endif]-->
+
+
+<!-- ======================== Fancy Box ======================== 
+
+<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.2.6.js"></script> 
+<link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.2.6.css" type="text/css" media="screen">
+-->
+
+
+
+
+<!-- ======================== Flex popup ======================== -->
+<link rel="stylesheet" type="text/css" href="/menuscripts/flexpopup/popupmenu.css" />
+
+<script type="text/javascript" src="/menuscripts/flexpopup/popupmenu.js">
+
+/***********************************************
+* Flex Level Popup Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/dynamicindex1/popupmenu.htm for this script and 100s more
+***********************************************/
+
+</script>
+
+
+
+<!-- ======================== JQuery tools http://flowplayer.org/index.html ======================== 
+
+<script src="js/jquery-tools/min/jquery.tools.1.1.2.js"></script>
+
+-->
+
+<!-- ======================== Test JS ======================== -->
+
+
+

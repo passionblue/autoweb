@@ -1,0 +1,30 @@
+
+.cell-label{ 
+	font: normal normal bold 11px verdana;
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	margin: 0px 0px 5px 0px;
+}
+.cell-data{ 
+	font: normal normal bold 16px verdana;
+	text-indent: 50px;
+	text-align: left;
+	vertical-align: text-bottom;
+	height: 100%;
+}
+
+table.chur-expense-individual-printable{
+	width: 100%; 
+	border: 1px solid black;
+	border-collapse:collapse;
+}
+
+table.chur-expense-individual-printable td{
+	border:1px solid black;
+	vertical-align: top;
+}
+
+td.chur-expense-individual-printable{
+	border:1px solid black;
+}

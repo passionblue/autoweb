@@ -1,0 +1,61 @@
+
+.cell-label{ 
+	font: normal normal bold 11px verdana;
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	margin: 0px 0px 5px 0px;
+}
+.cell-data{ 
+	font: normal normal bold 16px verdana;
+	text-indent: 50px;
+	text-align: left;
+	vertical-align: text-bottom;
+	height: 100%;
+}
+
+table.chur-expense-individual-printable{
+	width: 100%; 
+	border: 1px solid black;
+	border-collapse:collapse;
+}
+
+table.chur-expense-individual-printable td{
+	border:1px solid black;
+	vertical-align: top;
+}
+
+td.chur-expense-individual-printable{
+	border:1px solid black;
+}
+
+
+div.nav-buttons-frame {
+	
+}
+
+div.nav-buttons {
+	width: 200px;
+	height: 100px;
+	border: 2px solid red;
+	margin: 10px;	
+	float: left;
+	text-align: center;
+	font: normal normal bold 16px verdana;
+	line-height: 100px;
+	display:block;
+	background-image: url('/images/green/5D6BCFF0-TITLE.jpg');
+	background-size:200px 100px;
+}
+
+div.nav-buttons a {
+	color: black;
+	display:block; /* this fills anchor to fills the parent element */
+}
+
+div.nav-buttons a:hover {
+	text-decoration: none;
+}
+
+
+

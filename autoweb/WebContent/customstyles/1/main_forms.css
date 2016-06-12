@@ -1,0 +1,371 @@
+/************************************************************************************************************************/
+/*************************************** Auto created form Style 1 ******************************************************/
+/************************************************************************************************************************/
+.formTopArea{
+	width: 100%;
+	height: 5px;
+	background-color: orange;
+	margin-bottom: 30px;
+}
+.formBottomArea{
+	margin-top: 30px;
+	width: 100%;
+	height: 5px;
+	background-color: orange;
+}
+
+.formFrame{
+	padding: 5px 0px 5px 0px;
+	background-color: white;
+}
+
+.formInnerFrame{
+	padding: 20px;
+	background-color: #efefef;
+}
+
+.fieldSideText{
+	font: normal normal bold 12px verdana;
+	color:blue;
+	margin-left:150px;
+	margin-bottom: 10px;
+}
+
+.formFieldFrame{
+}
+
+.formRequiredLabel{
+	font: normal normal bold 12px verdana;
+	color: #054144;
+	float: left;
+	width: 130px;
+	text-align: right;
+	margin-right: 20px;
+}
+
+.formLabel{
+	font: normal normal normal 12px verdana;
+	color: #054144;
+	float: left;
+	width: 130px;
+	text-align: right;
+	margin-right: 20px;
+}
+
+.formFieldText{
+	padding-bottom: 5px;
+	float: left;
+}
+
+.formFieldPassword{
+	padding-bottom: 5px;
+	float: left;
+}
+
+
+.extraFieldDescription{
+	font: normal normal normal 9px verdana;
+	color: #054144;
+}
+
+.formFieldCheckbox{
+	padding-bottom: 5px;
+	float: left;
+}
+
+.formFieldDropDown{
+	padding-bottom: 5px;
+	float: left;
+}
+
+.formFieldRadio{
+	padding-bottom: 5px;
+	float: left;
+}
+
+/* Submit Buttons */
+.submitFrame{
+	height: 40px;
+	background-color: #efefef;
+	padding: 0px 0px 0px 150px;
+}
+
+.formSubmit{
+	font: normal normal bold 12px verdana;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	top: 10px;
+}
+
+.formSubmit a{
+	width: 50px;
+	height: 15px;
+	border: 1px solid orange;
+	padding : 5px 10px 5px 10px;
+	-moz-border-radius: 5px;
+	outline: none;
+	display:block;
+	text-align: center;
+	background-color: white;
+}
+
+.formSubmit a:hover{
+	color: blue;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+.formCancel{
+	font: normal normal bold 12px verdana;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	top: 10px;
+}
+
+.formCancel a{
+	width: 50px;
+	height: 15px;
+	border: 1px solid orange;
+	padding : 5px 10px 5px 10px;
+	-moz-border-radius: 5px;
+	outline: none;
+	display:block;
+	text-align: center;
+	background-color: white;
+}
+
+.formCancel a:hover{
+	color: blue;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+.formSubmitExt{
+	font: normal normal bold 12px verdana;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	top: 10px;
+	width: 50px;
+}
+
+.formSubmitExt a{
+	width: 50px;
+	height: 15px;
+	border: 1px solid orange;
+	padding : 5px 10px 5px 10px;
+	-moz-border-radius: 5px;
+	outline: none;
+	display:block;
+	text-align: center;
+	background-color: white;
+}
+
+.formSubmitExt a:hover{
+	color: blue;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+
+.formButton{
+	font: normal normal bold 12px verdana;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	top: 10px;
+}
+
+.formButton a{
+	width: 50px;
+	height: 15px;
+	border: 1px solid orange;
+	padding : 5px 10px 5px 10px;
+	-moz-border-radius: 2px;
+	outline: none;
+	display:block;
+	text-align: center;
+	background-color: white;
+	cursor: pointer;
+}
+
+.formButton a:hover{
+	color: blue;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+
+/************************************************************************************************************************/
+/*************************************** Auto created form Style 2 ******************************************************/
+/************************************************************************************************************************/
+
+.formTopArea-style2{
+	width: 100%;
+	height: 5px;
+	background-color: orange;
+	margin-bottom: 30px;
+}
+.formBottomArea-style2{
+	margin-top: 30px;
+	width: 100%;
+	height: 5px;
+	background-color: orange;
+}
+
+.formFrame-style2{
+	padding: 20px;
+	background-color: white;
+}
+
+.formInnerFrame-style2{
+	padding: 20px 100px 20px 100px;
+	background-color: #efefef;
+}
+
+.fieldSideText-style2{
+	font: normal normal bold 12px verdana;
+	color:blue;
+	margin-left:150px;
+	margin-bottom: 10px;
+	
+}
+
+.formFieldFrame-style2{
+}
+
+.formRequiredLabel-style2{
+	font: normal normal bold 12px verdana;
+	color: #054144;
+	width: 130px;
+	text-align: left;
+	margin-right: 20px;
+	margin-bottom: 5px;
+}
+
+.formLabel-style2{
+	font: normal normal normal 12px verdana;
+	color: #054144;
+	width: 130px;
+	text-align: left;
+	margin-right: 20px;
+	margin-bottom: 5px;
+}
+
+.formFieldText-style2{
+	padding-bottom: 5px;
+}
+
+.formFieldPassword-style2{
+	padding-bottom: 5px;
+}
+
+
+.extraFieldDescription-style2{
+	font: normal normal normal 9px verdana;
+	color: #054144;
+}
+
+.formFieldCheckbox-style2{
+	padding-bottom: 5px;
+}
+
+.formFieldDropDown-style2{
+	padding-bottom: 5px;
+}
+
+.formFieldRadio-style2{
+	padding-bottom: 5px;
+}
+
+
+/* Submit Buttons */
+
+.submitFrame-style2{
+	height: 40px;
+	background-color: #efefef;
+}
+
+.formSubmit-style2{
+	font: normal normal bold 12px verdana;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	top: 10px;
+	left: 0px;
+}
+
+.formSubmit-style2 a{
+	width: 50px;
+	height: 15px;
+	border: 1px solid orange;
+	padding : 5px 10px 5px 10px;
+	-moz-border-radius: 5px;
+	outline: none;
+	display:block;
+	text-align: center;
+	background-color: white;
+}
+
+.formSubmit-style2 a:hover{
+	color: blue;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+.formCancel-style2{
+	font: normal normal bold 12px verdana;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	top: 10px;
+}
+
+.formCancel-style2 a{
+	width: 50px;
+	height: 15px;
+	border: 1px solid orange;
+	padding : 5px 10px 5px 10px;
+	-moz-border-radius: 5px;
+	outline: none;
+	display:block;
+	text-align: center;
+	background-color: white;
+}
+
+.formCancel-style2 a:hover{
+	color: blue;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+.formSubmitExt-style2{
+	font: normal normal bold 12px verdana;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	top: 10px;
+	width: 50px;
+}
+
+.formSubmitExt-style2 a{
+	width: 50px;
+	height: 15px;
+	border: 1px solid orange;
+	padding : 5px 10px 5px 10px;
+	-moz-border-radius: 5px;
+	outline: none;
+	display:block;
+	text-align: center;
+	background-color: white;
+}
+
+.formSubmitExt-style2 a:hover{
+	color: blue;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+

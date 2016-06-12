@@ -1,0 +1,66 @@
+
+div#pollAnswerItems div.option-unselected {
+	border: 5px blue solid;
+}
+
+div#pollAnswerItems div.option-selected {
+	border: 5px orange solid;
+}
+
+.selectedField{
+	width:100px;
+	font-size: 10px;
+	font-family: verdana;
+	font-weight: bold;
+	border: 1px solid blue;
+	padding: 2px;
+	margin-right: 5px;
+}
+
+
+.matchmenu{
+background: white;
+border: 1px solid #f06b24;
+border-width: 5px 1px;
+padding: 10px;
+font: normal 10px Verdana;
+z-index: 100;
+display: none;
+}
+
+.matchmenu .column{
+float: left;
+width: 110px; /*width of each menu column*/
+margin-right: 5px;
+}
+
+.matchmenu .column ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+.matchmenu .column ul li{
+padding-bottom: 5px;
+}
+
+.matchmenu .column h3{
+background: #e0e0e0;
+font: bold 13px Arial;
+margin: 0 0 5px 0;
+}
+
+.matchmenu .column ul li a{
+text-decoration: none;
+}
+
+.matchmenu .column ul li a:hover{
+color: red;
+}
+
+div.resultPointsDisp{
+	color: red;
+	float: left;
+	font: normal normal bold 10px verdana;
+	margin: 3px 3px 3px 0px;
+}

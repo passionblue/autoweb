@@ -1,0 +1,3 @@
+
+This package has service layer classes. 
+No good OO practice but employed for rapid development.

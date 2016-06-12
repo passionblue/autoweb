@@ -1,0 +1,407 @@
+
+table.default {
+	border: #99dae8 solid 2px;
+	width: 100%;
+	background-color: #ffffff;
+}
+
+td.default {
+    font-family: verdana;
+    margin: 0 1px 0 0;
+    font-size: 11px;
+}
+
+td.footer {
+    font-family: verdana;
+    margin: 0 1px 0 0;
+    font-size: 10px;
+}
+
+a.footer {
+    font-family: verdana;
+    margin: 0 1px 0 0;
+    font-size: 10px;
+}
+
+a.footer:link {
+  	color: navy;
+}
+a.footer:visited {
+  	color: navy;
+}
+a.footer:hover {
+  	color: orange;
+    text-decoration: underline;
+}
+
+img.basicBorder {
+border: gray solid 2px;
+display: block;
+margin: 3px 3px 3px 3px;
+}
+
+.selectedanchor{ /*CSS class that gets added to the currently selected anchor link (assuming it's a text link)*/
+background: yellow;
+}
+
+
+a.generic{
+	font: normal normal bold 12px verdana;
+	width: 50px;
+	height: 15px;
+	border: 1px solid orange;
+	padding : 5px 10px 5px 10px;
+	-moz-border-radius: 5px;
+	outline: none;
+	display:block;
+	text-align: center;
+	background-color: white;
+}
+
+a.generic:hover{
+	color: blue;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+/* ######### Default class for drop down menus ######### */
+
+.anylinkcss{
+position: absolute;
+left: 0;
+top: 0;
+visibility: hidden;
+border: 1px solid black;
+border-bottom-width: 0;
+font: normal 12px Verdana;
+line-height: 18px;
+z-index: 100; /* zIndex should be greater than that of shadow's below */
+background: lightyellow;
+width: 200px; /* default width for menu */
+}
+
+.anylinkcss ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.anylinkcss ul li a{
+	width: 100%;
+	display: block;
+	text-indent: 3px;
+	border-bottom: 1px solid black;
+	padding: 1px 0;
+	text-decoration: none;
+	font-weight: bold;
+	text-indent: 5px;
+}
+
+.anylinkcss a:hover{ /*hover background color*/
+	background: black;
+	color: white;
+}
+
+/* ######### Alternate multi-column class for drop down menus ######### */
+
+
+.anylinkcsscols{
+	position: absolute;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	border: 1px solid black;
+	padding: 10px;
+	font: normal 12px Verdana;
+	z-index: 100; /*zIndex should be greater than that of shadow's below*/
+	background: #DEFFCA;
+}
+
+.anylinkcsscols .column{
+	width: 130px;
+	float: left;
+}
+
+.anylinkcsscols .column ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.anylinkcsscols li{
+	padding-bottom: 3px;
+}
+
+/* ######### class for shadow DIV ######### */
+
+
+.anylinkshadow{ /*CSS for shadow. Keep this as is */
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 99; /*zIndex for shadow*/
+	background: black;
+	visibility: hidden;
+}
+
+/* ######### Forms ######### */
+
+input.formbutton { 
+	padding:3px 6px;
+    border:2px solid #fff; 
+    margin:20px 0px 0px 0px; 
+    color:#3D7169; 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background:#CCC; 
+	-moz-border-radius:5px; }
+
+input.formbutton:hover	{ 
+	background:#009FAA none repeat scroll 0% 0%; 
+	color:white; }
+
+
+#contact_form { 
+	width: 100%; 
+	margin:0 auto; 
+	padding:10px 0;
+	background: transparent url(/images/form_bg.png) no-repeat;
+    position:relative; }
+    
+form fieldset { 
+	font-family:Verdana, Arial, Helvetica, sans-serif; 
+	font-size:1.2em;
+	margin:0px 0px 20px 0px; 
+	width:578px; 
+	position:relative;
+	border:0;
+	display:block; 
+	padding: 0px 10px 8px; }
+												
+form fieldset legend { 
+	border-width:1px; 
+	border-style:solid; 
+	border-color:#BBBB66; 
+	color:#3D7169;
+	font-weight:bold; 
+	font-variant:small-caps; 
+	font-size:140%; 
+	padding:4px 8px;
+	margin:0px 0px 10px 0px; 
+	position:relative; 
+	top: -12px; 
+	background:white; }
+	
+label { 
+	font-size:90%; 
+	display:block; 
+	float:left; 
+	width:10em; 
+	text-align:right;
+	margin:.2em .2em 0 0; 
+	color:#ffd; 
+	font-weight:bold;
+	padding:8px 0px; }
+	
+label.error { 
+	font-weight:normal;
+	color:red;
+	text-align:left;
+	width:140px; 
+	padding-left:25px;
+    background: transparent url(/images/cancel.png) no-repeat scroll left; }
+    
+input.text-input	  { margin:4px;padding:2px 0;color:#333; }
+
+/*
+
+label#name_label      { position:absolute; top:0; left:0; }
+input#name            { position:absolute; top:0; left:110px; }
+label#name_error      { position:absolute; top:22px; left:120px; }
+
+label#email_label     { position:absolute; top:45px; left:0px; }
+input#email           { position:absolute; top:45px; left:110px; }
+label#email_error      { position:absolute; top:67px; left:120px; }
+
+label#phone_label     { position:absolute; top:90px; left:0px; }
+input#phone           { position:absolute; top:90px; left:110px; }
+label#phone_error      { position:absolute; top:112px; left:120px; }
+*/
+
+
+/* OTHERS */
+
+.dynMenuTopItem{
+	float: right;
+	font: normal normal bold 10px Verdana;
+}
+
+.dynMenuTopItem a{
+	font: normal normal bold 10px Verdana;
+	color: #888;
+}
+
+.dynMenuTopItem a:hover{
+	font: normal normal bold 10px Verdana;
+	color: black;
+	text-decoration: none;
+}
+
+.dynMenuTopItemSelected{
+	font: normal normal bold 10px Verdana;
+	float: right;
+}
+
+.dynMenuTopItemSelected a{
+	font: normal normal bold 10px Verdana;
+	color: white;
+}
+
+.dynMenuTopItemSelected a:hover{
+	font: normal normal bold 10px Verdana;
+	color: black;
+	text-decoration: none;
+}
+
+div#dynMenuTopItemDivider{
+	float: right;
+	margin: 0px 1px 0px 10px;
+	padding: 0px 0px 0px 5px;
+	background-color: transparent;
+}
+
+a.pageMenuText{
+	font: normal normal bold 12px verdana;
+	color: #888;
+}
+
+a.pageMenuText:hover{
+	font: normal normal bold 12px verdana;
+	color: black;
+}
+
+
+/* ****** Paging ********************** */
+
+div.pagingFrame {
+}
+
+div.pagingNavMove {
+	float: left;
+}
+
+div.pagingNavNum {
+	float: left;
+}
+div.pagingNavNumCurrent {
+	float: left;
+	font-weight: bold;
+}
+div.pagingNavDiv {
+	float: left;
+}
+
+
+
+div#header-wrapper div#header-menuXXX  
+{width:100%}
+
+div#header-wrapper div#header-menuXXX ul#navXXX 
+{list-style-type: none; padding: 0 0 0 0; margin:0 0 0 0; font: normal normal normal 11px Verdana ; height:50px; width: 100%; background-color:black; }
+
+div#header-wrapper div#header-menuXXX ul#navXXX li#nav-itemXXX 
+{float: left; margin:27px 0px 0px 2px; padding: 0; border: 0px solid white}
+
+div#header-wrapper div#header-menuXXX ul#navXXX li#nav-itemXXX a 
+{height: 30; border:0px dotted blue; color: #909090; text-decoration: none; text-align: center; margin:0 0 0 0;  background: #ECEFE4 no-repeat right url(/upload/29/image/buttonback.png ); padding: 10 5 10 5;}
+
+div#header-wrapper div#header-menuXXX ul#navXXX li#nav-itemXXX a:hover,
+div#header-wrapper div#header-menuXXX ul#navXXX li#nav-itemXXX a:active
+{height: 30; border:0px dotted blue; color: black; text-align: center; margin:0 0 0 0;  background: #ECEFE4 no-repeat right none ;padding: 10 5 10 5; }
+div#header-wrapper div#header-menuXXX ul#navXXX li#nav-itemXXX a.active
+{height: 30; border:0px dotted blue; color: black; text-align: center; margin:0 0 0 0;  background: red no-repeat right none ;padding: 10 5 10 5; }
+
+
+/* ############## CONTENTS STYLE ###################################################### */
+
+div.contFrameDefault {
+	border: red solid 0px;
+	padding: 10px 10px 10px 10px;
+}
+
+div.contFrameSingle {
+	border: red solid 0px;
+	padding: 10px 10px 10px 10px;
+}
+
+
+div.contSubject {
+	font: normal normal bold 14px verdana;
+	border-bottom: blue double 0px;
+	background-color: #eee;
+	padding: 5px 5px 5px 5px;
+	margin: 0px 0px 5px 0px;
+}
+
+div.contData {
+	font: normal normal normal 12px verdana;
+	border: blue double 0px;
+	padding: 5px 10px 5px 10px;
+	
+}
+
+div.contDivider {
+	
+}
+
+img.contImgLeft {
+	float: left; 
+    margin: 10px; 
+    border: #999 solid 1px;
+    padding: 1px;
+    background-color: white;
+}
+
+
+
+/* ==== CONTENTS STYLE - Single View ==== */
+
+div.cntSingleFrame{
+	padding: 0px 15px 0px 5px;
+}
+
+div.cntSingleSubject{
+	margin: 10px 0px 30px 0px;
+	background-color: #3597A6; 
+	color: white; 
+	font: normal normal bold 18px verdana;
+	padding: 5px 0px 5px 5px;
+}
+
+div.cntSingleData{
+	font: normal normal normal 12px verdana;
+}
+
+img.cntSingleBodyImg {
+	float: left; 
+    margin: 10px;
+    border: #999 solid 1px;
+    margin: 2px 10px 10px 2px; 
+    padding: 1px;
+    background-color: white;
+}
+
+/* ############## Sliding Menu ########################### */
+
+#slider {
+	position: absolute;
+	background-color: blue;
+	width: 100%;
+	height: 55px;
+	top: -50px;
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;	
+	font-weight: bold;
+	
+}

@@ -1,0 +1,51 @@
+
+body {
+	font-size: 12px;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+a{
+	outline: none;
+	text-decoration: none;
+  	color: #2288dd;
+}
+a:link {
+	outline: none;
+  	color: #2288dd;
+}
+a:visited {
+	outline: none;
+	color: #2288dd;
+}
+a:hover {
+	outline: none;
+  	color: #2288dd;
+    text-decoration: underline;
+}
+
+p{
+	line-height: 17px;
+	margin:0 0 10px 0;
+	padding:0;
+}
+
+td {
+	font-family: verdana; 
+	margin: 0 1px 0 0; 
+	font-size: 12px;
+	vertical-align: top;
+}
+
+img {
+	/* border: 0; this prevents local border not effective*/
+	display: inline;
+	border-color: transparent;
+}
+
+.selectedanchor{ /*CSS class that gets added to the currently selected anchor link (assuming it's a text link)*/
+	background: yellow;
+}
+
+h3{
+	font-family: verdana;
+}

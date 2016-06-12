@@ -1,0 +1,68 @@
+/******************************************************************************************/
+/***************** data-content ***********************************************************/
+/******************************************************************************************/
+
+div.panel div.content-panel-frame {
+	padding: 2px;
+	background-color: pink;
+}
+
+div.panel div.content-panel-subject {
+	background-color: blue;
+}
+
+div.panel div.content-panel-data {
+	background-color: yellow;
+}
+
+
+/******************************************************************************************/
+/***************** link-content *****************/
+/******************************************************************************************/
+
+div.content-link a {
+	display: block;
+	border: 0px dotted blue;
+	text-decoration: none;
+	color : #909090;
+	text-align: center;
+	background-color: white;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div.content-link a:hover {
+	display: block;
+	border: 0px solid blue;
+	text-decoration: none; 
+	color : black;
+	background-color: white;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div#link-contentdefaultcontentlinks a {
+	display: block;
+	border: 0px dotted blue;
+	text-decoration: none;
+	color : #909090;
+	text-align: center;
+	background-color: transparent;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div#link-contentdefaultcontentlinks a:hover {
+	display: block;
+	border: 0px solid blue;
+	text-decoration: none; 
+	color : black;
+	background-color: transparent;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+

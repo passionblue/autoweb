@@ -1,0 +1,224 @@
+#menuv
+{	position: relative;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border: 1px solid #5970B2;
+	border-bottom: 1px;
+	width: 173px;
+}
+* html #menuv{
+	width: 175px;
+}
+
+
+#menuv li
+{	display: inline;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#menuv li a, #menuv li a#buttonnohover
+{	display: block;
+	margin: 0px;
+	padding: 5px 17px 5px 13px;
+	font: bold 11px arial;
+	text-align: right;
+	text-decoration: none;
+	white-space: nowrap;
+	color: black;
+	background-color: #ECEFE4;
+	border-bottom: 1px solid #5970B2;
+}
+
+#menuv li a:hover, #menuv li a#buttonhover
+{	
+	background-color: #ABC9DE; 
+	color: white;
+}
+
+#menuv ul
+{	z-index: 100;
+	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #5970B2
+}
+
+#menuv ul li
+{
+}
+
+#menuv ul li a
+{	width: auto;
+	text-align: left;
+	border-width: 0;
+	color: #2875DE;
+}
+#menuv ul li a:hover
+{
+	color: white;
+}
+
+#menuv .hsub
+{background: #ECEFE4 no-repeat right url(/menuscripts/mldd/arrow.gif)}
+
+#menuv .hsub:hover
+{background: #ABC9DE no-repeat right url(/menuscripts/mldd/arrow.gif)}
+
+
+
+/* ********************************************************************************* */
+
+#menuh
+{	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	border: 0px solid #5970B2;
+	border-bottom: 0px;
+	white-space: nowrap;
+}
+
+#menuh li
+{	margin: 0 2px;
+	padding: 0 0 0 0;
+	font: bold 11px arial;
+	border-right: 0px solid black;
+	display: inline;
+	list-style: none;
+	float: left;
+}
+
+#menuh li a, #menuh li a#buttonnohover
+{	text-align: center;
+	background-color: #ECEFE4;
+	border: 0px solid #5970B2;
+	padding: 4px 20px;
+	margin: 0;
+	color: black;
+	display: block;
+	width: auto;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#menuh li a:hover, #menuh li a#buttonhover
+{	
+	background-color: #ABC9DE;
+	color: white;
+}
+
+#menuh ul
+{	
+	margin: 2px 0 0 0;
+	padding: 0;
+	z-index: 100;
+	position: absolute;
+	visibility: hidden;
+	background: #ECEFE4;
+    border: 1px solid #5970B2;
+}
+		
+#menuh ul li
+{	margin: 0px 0px 0px 0px;
+	float: none;
+	border-width: 0px;
+	padding: 0px 0px 0px 0px;
+	width: 20px;
+} 
+
+#menuh ul li a
+{
+	margin: 0px;
+	padding: 5px 10px;
+	width: auto;
+	font: 11px arial;
+	text-align: left;
+	text-decoration: none;
+	display: block;
+	white-space: nowrap;
+	border: 0px solid black;
+	background: transparent;
+	color: #2875DE;
+}
+
+#menuh ul li a:hover
+{		
+	color: #FFF
+}
+
+#menuh .hsub
+{background: #ECEFE4 no-repeat right url(/menuscripts/mldd/arrow.gif); z-index: 101;}
+
+#menuh .hsub:hover
+{background: #ABC9DE no-repeat right url(/menuscripts/mldd/arrow.gif); z-index: 101;}
+
+
+#menu1
+{	visibility: visible;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: white}
+
+	#menu1 li
+	{	display: inline;
+		list-style: none;
+		float: left;
+		margin: 0;
+		padding: 0}
+	
+	#menu1 li a, #menu1 li a#buttonnohover
+	{	display: block;
+		margin: 0 2px 0 0;
+		padding: 4px 15px 4px 15px;
+		font: bold 11px arial;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+		color: black;
+		background-color: #ECEFE4;
+		border: 1px solid #5970B2}
+
+	#menu1 li a:hover, #menu1 li a#buttonhover
+	{	background-color: #ABC9DE}
+
+		#menu1 ul
+		{	z-index: 100;
+			position: absolute;
+			visibility: hidden;
+			margin: 2px 0 0 0;
+			padding: 0;
+			background: #ECEFE4;
+			border: 1px solid #5970B2}
+
+			#menu1 ul li
+			{	float: none}
+
+			#menu1 ul li a
+			{	display: block;
+				width: auto;
+				margin: 0;
+				padding: 5px 17px 5px 13px;
+				font-weight: normal;
+				text-align: left;
+				text-transform: none;
+				white-space: pre;
+				color: #2875DE;
+				background: transparent;
+				border-width: 0}
+
+	#menu1 .hsub
+	{	background: #ECEFE4 no-repeat right url(arrow.gif)}
+
+	#menu1 .hsub:hover
+	{	background: #ABC9DE no-repeat right url(arrow.gif)}
+
+
+
+

@@ -1,0 +1,56 @@
+.mlddm1h
+{	position: relative;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background-color: #7BA5C9;
+	border: 1px solid #5970B2;
+	border-bottom: 0px}
+
+	.mlddm1h li
+	{	display: inline;
+		list-style: none;
+		padding: 0;
+		margin: 0}
+
+	.mlddm1h li a, .mlddm1h li a#buttonnohover
+	{	display: block;
+		margin: 0px;
+		padding: 5px 17px 5px 13px;
+		width: 120px;
+		font: 11px arial;
+		text-align: right;
+		text-decoration: none;
+		white-space: nowrap;
+		background-color: #ECEFE4;
+		border-bottom: 1px solid #5970B2}
+
+	.mlddm1h li a:hover, .mlddm1h li a#buttonhover
+	{	background-color: #ABC9DE}
+
+		.mlddm1h ul
+		{	z-index: 100;
+			position: absolute;
+			visibility: hidden;
+			margin: 0;
+			padding: 0;
+			background: #D3ECF2;
+			border: 1px solid #5970B2}
+
+			.mlddm1h ul li
+			{	}
+
+			.mlddm1h ul li a
+			{	width: auto;
+				text-align: left;
+				border-width: 0}
+
+.mlddm1h .hsub
+{	background: #ECEFE4 no-repeat right url(/menuscripts/mldd/arrow.gif)}
+
+.mlddm1h .hsub:hover
+{	background: #ABC9DE no-repeat right url(/menuscripts/mldd/arrow.gif)}
+
+
+
+

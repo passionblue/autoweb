@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+<form-beans>
+    <form-bean name="expenseCategoryForm" type="com.autosite.struts.form.ExpenseCategoryForm" />
+    <form-bean name="cleanerPickupDeliveryConfigForm" type="com.autosite.struts.form.CleanerPickupDeliveryConfigForm" />
+    <form-bean name="cleanerCustomerNotificationForm" type="com.autosite.struts.form.CleanerCustomerNotificationForm" />
+    <form-bean name="cleanerServiceItemForm" type="com.autosite.struts.form.CleanerServiceItemForm" />
+    <form-bean name="cleanerUserForm" type="com.autosite.struts.form.CleanerUserForm" />
+    <form-bean name="cleanerGarmentTypeForm" type="com.autosite.struts.form.CleanerGarmentTypeForm" />
+    <form-bean name="cleanerLocationForm" type="com.autosite.struts.form.CleanerLocationForm" />
+    <form-bean name="expenseItemForm" type="com.autosite.struts.form.ExpenseItemForm" />
+    <form-bean name="cleanerProductForm" type="com.autosite.struts.form.CleanerProductForm" />
+    <form-bean name="siteObjectForm" type="com.autosite.struts.form.SiteObjectForm" />
+    <form-bean name="cleanerPickupDeliveryForm" type="com.autosite.struts.form.CleanerPickupDeliveryForm" />
+    <form-bean name="autositeRemoteDeviceForm" type="com.autosite.struts.form.AutositeRemoteDeviceForm" />
+    <form-bean name="expenseForm" type="com.autosite.struts.form.ExpenseForm" />
+    <form-bean name="sweepWorldcup2014Form" type="com.autosite.struts.form.SweepWorldcup2014Form" />
+    <form-bean name="cleanerServiceCategoryForm" type="com.autosite.struts.form.CleanerServiceCategoryForm" />
+    <form-bean name="cleanerGarmentServiceForm" type="com.autosite.struts.form.CleanerGarmentServiceForm" />
+</form-beans>
+<action-mappings>
+    <action   
+        attribute="expenseCategoryForm"
+        name="expenseCategoryForm"
+        path="/expenseCategoryAction"
+        type="com.autosite.struts.action.ExpenseCategoryAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerPickupDeliveryConfigForm"
+        name="cleanerPickupDeliveryConfigForm"
+        path="/cleanerPickupDeliveryConfigAction"
+        type="com.autosite.struts.action.CleanerPickupDeliveryConfigAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerCustomerNotificationForm"
+        name="cleanerCustomerNotificationForm"
+        path="/cleanerCustomerNotificationAction"
+        type="com.autosite.struts.action.CleanerCustomerNotificationAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerServiceItemForm"
+        name="cleanerServiceItemForm"
+        path="/cleanerServiceItemAction"
+        type="com.autosite.struts.action.CleanerServiceItemAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerUserForm"
+        name="cleanerUserForm"
+        path="/cleanerUserAction"
+        type="com.autosite.struts.action.CleanerUserAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerGarmentTypeForm"
+        name="cleanerGarmentTypeForm"
+        path="/cleanerGarmentTypeAction"
+        type="com.autosite.struts.action.CleanerGarmentTypeAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerLocationForm"
+        name="cleanerLocationForm"
+        path="/cleanerLocationAction"
+        type="com.autosite.struts.action.CleanerLocationAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="expenseItemForm"
+        name="expenseItemForm"
+        path="/expenseItemAction"
+        type="com.autosite.struts.action.ExpenseItemAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerProductForm"
+        name="cleanerProductForm"
+        path="/cleanerProductAction"
+        type="com.autosite.struts.action.CleanerProductAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="siteObjectForm"
+        name="siteObjectForm"
+        path="/siteObjectAction"
+        type="com.autosite.struts.action.SiteObjectAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerPickupDeliveryForm"
+        name="cleanerPickupDeliveryForm"
+        path="/cleanerPickupDeliveryAction"
+        type="com.autosite.struts.action.CleanerPickupDeliveryAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="autositeRemoteDeviceForm"
+        name="autositeRemoteDeviceForm"
+        path="/autositeRemoteDeviceAction"
+        type="com.autosite.struts.action.AutositeRemoteDeviceAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="expenseForm"
+        name="expenseForm"
+        path="/expenseAction"
+        type="com.autosite.struts.action.ExpenseAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="sweepWorldcup2014Form"
+        name="sweepWorldcup2014Form"
+        path="/sweepWorldcup2014Action"
+        type="com.autosite.struts.action.SweepWorldcup2014AjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerServiceCategoryForm"
+        name="cleanerServiceCategoryForm"
+        path="/cleanerServiceCategoryAction"
+        type="com.autosite.struts.action.CleanerServiceCategoryAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+    <action   
+        attribute="cleanerGarmentServiceForm"
+        name="cleanerGarmentServiceForm"
+        path="/cleanerGarmentServiceAction"
+        type="com.autosite.struts.action.CleanerGarmentServiceAjaxAction">
+         <forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+</action-mappings>
+</struts-config>

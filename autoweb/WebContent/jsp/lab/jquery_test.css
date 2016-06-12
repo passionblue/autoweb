@@ -1,0 +1,454 @@
+/* ################# Image radio exmaple ################################ */
+td.option-unselected {
+	border: 5px black solid;
+}
+
+td.option-selected {
+	border: 5px orange solid;
+}
+
+/* ################# Image radio exmaple ################################ */
+div.wrapper{
+	position:relative; /* important(so we can absolutely position the description div */ 
+}
+div.description{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	display:none; /* hide it */
+	/* styling bellow */
+	background-color:black;
+	font-family: 'tahoma';
+	font-size:15px;
+	color:white;
+}
+div.description_content{
+	padding:10px;
+}
+
+#wait{
+	clear: both;
+	background: transparent url(images/wait.gif) no-repeat;
+	width: 40px;
+	height: 40px;
+}
+
+.tabstyle{
+	font-size:11px;
+}
+
+/* ========== jqModal Confirmation ================= */
+div.jqmConfirm input[type="submit"] { padding: 4px; margin: 10px 30px; background: #000; color: #FFF; border: 1px solid #AAA; }
+
+/* jqModal confirm CSS courtesy of;
+   Alexandre Plennevaux <alexandre@pixeline.be>,
+   Brice Burgess <bhb@iceburg.net> */
+
+div.jqmConfirm { /* contains + positions the alert window */
+  display: none;
+  
+  position: fixed;
+  top: 17%;
+  width: 100%;
+}
+
+div.myjqmWindow {
+    display: none;
+    
+    position: fixed;
+    top: 17%;
+    left: 40%;
+    
+//    margin-left: -300px;
+//    width: 100px;
+    
+    background-color: #fff;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html div.jqmConfirm {
+     position: absolute;
+     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+div.jqmConfirmWindow {
+  height:auto;
+  width: auto;
+  margin: auto;
+  
+  max-width:400px;
+  padding: 0 10px 10px;
+  
+  background:#FFF;
+  border:1px dotted #FFF;
+}
+
+.jqmConfirmTitle{
+  margin:5px 2px;
+  height:20px;
+  color:#000;
+  background:#FFF;
+}
+.jqmConfirmTitle h1{
+  margin:5px 2px;
+  padding-left:5px;
+  padding:0;
+  font-size:14px;
+  text-transform:capitalize;
+  letter-spacing:-1px;
+  font-weight:bold;
+  color:#000;
+
+  float:left;
+  height:20px;
+}
+
+div.jqmConfirm .jqmClose em{display:none;}
+div.jqmConfirm .jqmClose {
+  width:20px;
+  height:20px;
+  display:block;
+  float:right;
+  clear:right;
+  background:transparent url(confirm/close_icon_double.png) 0 0 no-repeat;
+}
+
+div.jqmConfirm a.jqmClose:hover{ background-position: 0 -20px; }
+
+div.jqmConfirmContent{
+  border-top:px;
+  color:#000;
+  font:11px/14pt arial;
+  padding:5px 20px 5px;
+  margin:5px;
+  border:1px dotted #111;
+  letter-spacing:0px;
+  background:#FFF url(confirm/darkgrid.png);
+}
+
+/*Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°
+  clearing a float without additional markup
+   http://www.positioniseverything.net/easyclearing.html */
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+
+/* ===================jquery tools ==================================== */
+
+.tooltip {
+	display:none;
+	background:transparent url(/js/jquery-tools/images/black_arrow.png);
+	font-size:12px;
+	height:70px;
+	width:160px;
+	padding:25px;
+	color:#fff;	
+}
+
+.date {
+	border:1px solid #ccc;
+	font-size:18px;
+	padding:4px;
+	text-align:center;
+	width:194px;		
+	-moz-box-shadow:0 0 10px #eee inset;
+}
+
+/* calendar root element */
+#calroot {
+	/* place on top of other elements. set a higher value if nessessary */
+	z-index:1;
+	
+	margin-top:-1px;
+	width:198px;
+	padding:2px;
+	background-color:#fff;
+	font-size:11px;
+	border:1px solid #ccc;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-box-shadow: 0 0 15px #666;
+	-webkit-box-shadow: 0 0 15px #666;	
+}
+
+
+/*
+	root element for the scrollable.
+	when scrolling occurs this element stays still.
+*/
+.scrollable {
+
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 680px;
+	height:120px;
+
+	/* custom decorations */
+	border:1px solid #ccc;
+	background:url(/js/jquery-tools/h300.png) repeat-x;
+}
+
+/*
+	root element for scrollable items. Must be absolutely positioned
+	and it should have a extremely large width to accomodate scrollable items.
+	it's enough that you set the width and height for the root element and
+	not for this element.
+*/
+.scrollable .items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+
+.items div {
+	float:left;
+	width:680px;
+}
+
+/* single scrollable item */
+.scrollable img {
+	float:left;
+	margin:20px 5px 20px 21px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:100px;
+	height:75px;
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+/* active item */
+.scrollable .active {
+	border:2px solid #000;
+	position:relative;
+	cursor:default;
+}
+
+
+
+/* this makes it possible to add next button beside scrollable */
+.scrollable {
+	float:left;	
+}
+
+/* prev, next, prevPage and nextPage buttons */
+a.browse {
+	background:url(/js/jquery-tools/hori_large.png) no-repeat;
+	display:block;
+	width:30px;
+	height:30px;
+	float:left;
+	margin:40px 10px;
+	cursor:pointer;
+	font-size:1px;
+}
+
+/* right */
+a.right 				{ background-position: 0 -30px; clear:right; margin-right: 0px;}
+a.right:hover 		{ background-position:-30px -30px; }
+a.right:active 	{ background-position:-60px -30px; } 
+
+
+/* left */
+a.left				{ margin-left: 0px; } 
+a.left:hover  		{ background-position:-30px 0; }
+a.left:active  	{ background-position:-60px 0; }
+
+/* up and down */
+a.up, a.down		{ 
+	background:url(/js/jquery-tools/vert_large.png) no-repeat; 
+	float: none;
+	margin: 10px 50px;
+}
+
+/* up */
+a.up:hover  		{ background-position:-30px 0; }
+a.up:active  		{ background-position:-60px 0; }
+
+/* down */
+a.down 				{ background-position: 0 -30px; }
+a.down:hover  		{ background-position:-30px -30px; }
+a.down:active  	{ background-position:-60px -30px; } 
+
+
+/* disabled navigational button */
+a.disabled {
+	visibility:hidden !important;		
+} 	
+
+
+
+
+
+
+
+
+
+
+/* head. contains title, prev/next month controls and possible month/year selectors */
+#calhead {	
+	padding:2px 0;
+	height:22px;
+} 
+
+#caltitle {
+	font-size:14px;
+	color:#0150D1;	
+	float:left;
+	text-align:center;
+	width:155px;
+	line-height:20px;
+	text-shadow:0 1px 0 #ddd;
+}
+
+#calnext, #calprev {
+	display:block;
+	width:20px;
+	height:20px;
+	background:transparent url(prev.gif) no-repeat scroll center center;
+	float:left;
+	cursor:pointer;
+}
+
+#calnext {
+	background-image:url(next.gif);
+	float:right;
+}
+
+#calprev.caldisabled, #calnext.caldisabled {
+	visibility:hidden;	
+}
+
+/* year/month selector */
+#caltitle select {
+	font-size:10px;	
+}
+
+/* names of the days */
+#caldays {
+	height:14px;
+	border-bottom:1px solid #ddd;
+}
+
+#caldays span {
+	display:block;
+	float:left;
+	width:28px;
+	text-align:center;
+}
+
+/* container for weeks */
+#calweeks {
+	background-color:#fff;
+	margin-top:4px;
+}
+
+/* single week */
+.calweek {
+	clear:left;
+	height:22px;
+}
+
+/* single day */
+.calweek a {
+	display:block;
+	float:left;
+	width:27px;
+	height:20px;
+	text-decoration:none;
+	font-size:11px;
+	margin-left:1px;
+	text-align:center;
+	line-height:20px;
+	color:#666;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px; 		
+} 
+
+/* different states */
+.calweek a:hover, .calfocus {
+	background-color:#ddd;
+}
+
+/* sunday */
+a.calsun {
+	color:red;		
+}
+
+/* offmonth day */
+a.caloff {
+	color:#ccc;		
+}
+
+a.caloff:hover {
+	background-color:rgb(245, 245, 250);		
+}
+
+
+/* unselecteble day */
+a.caldisabled {
+	background-color:#efefef !important;
+	color:#ccc	!important;
+	cursor:default;
+}
+
+/* current day */
+#calcurrent {
+	background-color:#498CE2;
+	color:#fff;
+}
+
+/* today */
+#caltoday {
+	background-color:#333;
+	color:#fff;
+}
+
+
+.flexigrid div.fbutton .add
+{
+   background: url(/js/flexigrid/images/add.png) no-repeat center left;
+}	
+    
+.flexigrid div.fbutton .delete
+{
+	bakground: url(/js/flexigrid/images/close.png) no-repeat center left;
+}	
+
+
+div.ttt-frame{
+	border: 5px solid green;
+}
+ul.ttt-ul{
+}
+
+li.ttt-li{
+	display: block;
+}
+
+
+

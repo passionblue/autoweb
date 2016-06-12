@@ -1,0 +1,165 @@
+package com.autosite.db;
+
+import com.surveygen.db.BaseHibernateDAO;
+import java.sql.Timestamp;
+import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.criterion.Example;
+
+/**
+ * A data access object (DAO) providing persistence and search support for
+ * WhoisData entities. Transaction control of the save(), update() and delete()
+ * operations can directly support Spring container-managed transactions or they
+ * can be augmented to handle user-managed Spring transactions. Each of these
+ * methods provides additional information for how to configure it for the
+ * desired type of transaction control.
+ * 
+ * @see com.autosite.db.WhoisData
+ * @author MyEclipse Persistence Tools
+ */
+
+public class WhoisDataDAO extends BaseHibernateDAO {
+    private static final Log log = LogFactory.getLog(WhoisDataDAO.class);
+    // property constants
+    public static final String SITE_ID = "siteId";
+    public static final String IP = "ip";
+    public static final String WHOIS_DATA = "whoisData";
+    public static final String SERVER = "server";
+    public static final String FORCE_REQUEST = "forceRequest";
+
+    public void save(WhoisData transientInstance) {
+        log.debug("saving WhoisData instance");
+        try {
+            getSession().save(transientInstance);
+            log.debug("save successful");
+        }
+        catch (RuntimeException re) {
+            log.error("save failed", re);
+            throw re;
+        }
+    }
+
+    public void delete(WhoisData persistentInstance) {
+        log.debug("deleting WhoisData instance");
+        try {
+            getSession().delete(persistentInstance);
+            log.debug("delete successful");
+        }
+        catch (RuntimeException re) {
+            log.error("delete failed", re);
+            throw re;
+        }
+    }
+
+    public WhoisData findById(Long id) {
+        log.debug("getting WhoisData instance with id: " + id);
+        try {
+            WhoisData instance = (WhoisData) getSession().get("com.autosite.db.WhoisData", id);
+            return instance;
+        }
+        catch (RuntimeException re) {
+            log.error("get failed", re);
+            throw re;
+        }
+    }
+
+    public List findByExample(WhoisData instance) {
+        log.debug("finding WhoisData instance by example");
+        try {
+            List results = getSession().createCriteria("com.autosite.db.WhoisData").add(Example.create(instance)).list();
+            log.debug("find by example successful, result size: " + results.size());
+            return results;
+        }
+        catch (RuntimeException re) {
+            log.error("find by example failed", re);
+            throw re;
+        }
+    }
+
+    public List findByProperty(String propertyName, Object value) {
+        log.debug("finding WhoisData instance with property: " + propertyName + ", value: " + value);
+        try {
+            String queryString = "from WhoisData as model where model." + propertyName + "= ?";
+            Query queryObject = getSession().createQuery(queryString);
+            queryObject.setParameter(0, value);
+            return queryObject.list();
+        }
+        catch (RuntimeException re) {
+            log.error("find by property name failed", re);
+            throw re;
+        }
+    }
+
+    public List findBySiteId(Object siteId) {
+        return findByProperty(SITE_ID, siteId);
+    }
+
+    public List findByIp(Object ip) {
+        return findByProperty(IP, ip);
+    }
+
+    public List findByWhoisData(Object whoisData) {
+        return findByProperty(WHOIS_DATA, whoisData);
+    }
+
+    public List findByServer(Object server) {
+        return findByProperty(SERVER, server);
+    }
+
+    public List findByForceRequest(Object forceRequest) {
+        return findByProperty(FORCE_REQUEST, forceRequest);
+    }
+
+    public List findAll() {
+        log.debug("finding all WhoisData instances");
+        try {
+            String queryString = "from WhoisData";
+            Query queryObject = getSession().createQuery(queryString);
+            return queryObject.list();
+        }
+        catch (RuntimeException re) {
+            log.error("find all failed", re);
+            throw re;
+        }
+    }
+
+    public WhoisData merge(WhoisData detachedInstance) {
+        log.debug("merging WhoisData instance");
+        try {
+            WhoisData result = (WhoisData) getSession().merge(detachedInstance);
+            log.debug("merge successful");
+            return result;
+        }
+        catch (RuntimeException re) {
+            log.error("merge failed", re);
+            throw re;
+        }
+    }
+
+    public void attachDirty(WhoisData instance) {
+        log.debug("attaching dirty WhoisData instance");
+        try {
+            getSession().saveOrUpdate(instance);
+            log.debug("attach successful");
+        }
+        catch (RuntimeException re) {
+            log.error("attach failed", re);
+            throw re;
+        }
+    }
+
+    public void attachClean(WhoisData instance) {
+        log.debug("attaching clean WhoisData instance");
+        try {
+            getSession().lock(instance, LockMode.NONE);
+            log.debug("attach successful");
+        }
+        catch (RuntimeException re) {
+            log.error("attach failed", re);
+            throw re;
+        }
+    }
+}

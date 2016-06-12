@@ -1,0 +1,789 @@
+<%@page language="java" import="java.util.*,com.jtrend.session.*,com.jtrend.util.*,com.autosite.*,com.autosite.ds.*,com.autosite.session.*,com.autosite.db.*,com.autosite.util.*"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+
+<% 
+    Site site = SiteDS.getInstance().registerSite(request.getServerName());
+     SiteConfig siteConfig = SiteConfigDS.getInstance().getSiteConfigBySiteId(site.getId());
+
+	AutositeSessionContext sessionContext = (AutositeSessionContext) session.getAttribute("k_session_context");
+	String listAllByAdmin = request.getParameter("listAllByAdmin");
+	
+	boolean showListAllByAdmin = false;
+	if ( sessionContext.isSuperAdminLogin() && WebUtil.isTrue(listAllByAdmin)){
+		showListAllByAdmin = true;
+	}
+
+	List list = new ArrayList();
+	StyleSetDS ds = StyleSetDS.getInstance();    
+
+	if (showListAllByAdmin)
+		list = ds.getAll();
+	else		
+    	list = ds.getBySiteId(site.getId());
+	SiteDS siteDS = SiteDS.getInstance();
+
+%> 
+
+<!-- =================== PAGING =================== -->
+<%
+	String uri = (String) session.getAttribute("k_request_uri");
+
+	int defaultNumDisplay = 10;
+	int numDisplayInPage = WebParamUtil.getIntValue(request.getParameter("numInPage"), defaultNumDisplay);;
+	int listPage = WebParamUtil.getIntValue(request.getParameter("listPage"), 1);
+	String optionQueryStr = "";
+	if (showListAllByAdmin) optionQueryStr += "&listAllByAdmin=true";
+
+	PagingInfo pagingInfo = PagingUtil.getPageDisplayInfo(list, numDisplayInPage, listPage);
+
+	list = PagingUtil.getPagedList(pagingInfo, list);
+	String html = PagingUtil.createPagingHtmlFromPagingInfo(pagingInfo, uri, optionQueryStr, listPage);
+	
+%>	
+<%= html %>
+
+<!-- =================== END PAGING =================== -->
+
+
+<TABLE border="1" width="100%" bgcolor="transparent" align="center" cellspacing="0" style="border-width: 1px; border-style: solid">
+    <TR>
+        <TD>
+            <a href="t_style_set_add2.html?prv_returnPage=style_set_home"> Add New 2</a>
+        </TD>
+    </TR>
+</TABLE>
+
+<TABLE border="0" width="100%" bgcolor="#99dae8" align="center" cellspacing="1">
+
+<TR bgcolor="#ffffff" valign="top">
+
+    <td> ID </td>
+
+    <td> 
+	    <div id="styleSetForm_name_label" style="font-size: normal normal bold 10px verdana;" >Name </div>
+    </td> 
+    <td> 
+	    <div id="styleSetForm_styleId_label" style="font-size: normal normal bold 10px verdana;" >Style Id </div>
+    </td> 
+    <td> 
+	    <div id="styleSetForm_dataStyleId_label" style="font-size: normal normal bold 10px verdana;" >Data Style Id </div>
+    </td> 
+    <td> 
+	    <div id="styleSetForm_linkStyleId_label" style="font-size: normal normal bold 10px verdana;" >Link Style Id </div>
+    </td> 
+	<td></td>
+	<td></td>
+</TR>
+
+
+<%
+
+    for(Iterator iter = list.iterator();iter.hasNext();) {
+        StyleSet _StyleSet = (StyleSet) iter.next();
+%>
+
+
+
+<TR bgcolor="#ffffff" valign="top">
+
+    <td> <%= _StyleSet.getId() %> </td>
+
+
+    <td> 
+	<form name="styleSetFormEditField_Name_<%=_StyleSet.getId()%>" method="get" action="/styleSetAction.html" >
+
+
+		<div id="styleSetForm_name_field">
+	    <div id="styleSetForm_name_text" class="formFieldText" >       
+	        <input id="field" type="text" size="20" name="name" value="<%=WebUtil.display(_StyleSet.getName())%>"/> <span></span>
+	    </div>      
+		</div><div class="clear"></div>
+
+		<br>
+            <a id="formSubmit" href="javascript:document.styleSetFormEditField_Name_<%=_StyleSet.getId()%>.submit();">Submit</a>
+
+	<INPUT TYPE="HIDDEN" NAME="editfield" value="true">
+	<INPUT TYPE="HIDDEN" NAME="id" value="<%=_StyleSet.getId()%>">
+	<INPUT TYPE="HIDDEN" NAME="returnPage" value="style_set_home">
+	</form>
+    
+    
+    </td>
+
+    <td> 
+	<form name="styleSetFormEditField_StyleId_<%=_StyleSet.getId()%>" method="get" action="/styleSetAction.html" >
+
+
+		<div id="styleSetForm_styleId_field">
+	    <div id="styleSetForm_styleId_text" class="formFieldText" >       
+	        <input id="field" type="text" size="20" name="styleId" value="<%=WebUtil.display(_StyleSet.getStyleId())%>"/> <span></span>
+	    </div>      
+		</div><div class="clear"></div>
+
+		<br>
+            <a id="formSubmit" href="javascript:document.styleSetFormEditField_StyleId_<%=_StyleSet.getId()%>.submit();">Submit</a>
+
+	<INPUT TYPE="HIDDEN" NAME="editfield" value="true">
+	<INPUT TYPE="HIDDEN" NAME="id" value="<%=_StyleSet.getId()%>">
+	<INPUT TYPE="HIDDEN" NAME="returnPage" value="style_set_home">
+	</form>
+    
+    
+    </td>
+
+    <td> 
+	<form name="styleSetFormEditField_DataStyleId_<%=_StyleSet.getId()%>" method="get" action="/styleSetAction.html" >
+
+
+		<div id="styleSetForm_dataStyleId_field">
+	    <div id="styleSetForm_dataStyleId_text" class="formFieldText" >       
+	        <input id="field" type="text" size="20" name="dataStyleId" value="<%=WebUtil.display(_StyleSet.getDataStyleId())%>"/> <span></span>
+	    </div>      
+		</div><div class="clear"></div>
+
+		<br>
+            <a id="formSubmit" href="javascript:document.styleSetFormEditField_DataStyleId_<%=_StyleSet.getId()%>.submit();">Submit</a>
+
+	<INPUT TYPE="HIDDEN" NAME="editfield" value="true">
+	<INPUT TYPE="HIDDEN" NAME="id" value="<%=_StyleSet.getId()%>">
+	<INPUT TYPE="HIDDEN" NAME="returnPage" value="style_set_home">
+	</form>
+    
+    
+    </td>
+
+    <td> 
+	<form name="styleSetFormEditField_LinkStyleId_<%=_StyleSet.getId()%>" method="get" action="/styleSetAction.html" >
+
+
+		<div id="styleSetForm_linkStyleId_field">
+	    <div id="styleSetForm_linkStyleId_text" class="formFieldText" >       
+	        <input id="field" type="text" size="20" name="linkStyleId" value="<%=WebUtil.display(_StyleSet.getLinkStyleId())%>"/> <span></span>
+	    </div>      
+		</div><div class="clear"></div>
+
+		<br>
+            <a id="formSubmit" href="javascript:document.styleSetFormEditField_LinkStyleId_<%=_StyleSet.getId()%>.submit();">Submit</a>
+
+	<INPUT TYPE="HIDDEN" NAME="editfield" value="true">
+	<INPUT TYPE="HIDDEN" NAME="id" value="<%=_StyleSet.getId()%>">
+	<INPUT TYPE="HIDDEN" NAME="returnPage" value="style_set_home">
+	</form>
+    
+    
+    </td>
+
+
+
+    <td>
+    <form name="styleSetForm<%=_StyleSet.getId()%>" method="get" action="/v_style_set_edit.html" >
+        <a href="javascript:document.styleSetForm<%=_StyleSet.getId()%>.submit();">Edit</a>           
+        <INPUT TYPE="HIDDEN" NAME="id" value="<%= _StyleSet.getId() %>">
+    </form>
+    <form name="styleSetForm<%=_StyleSet.getId()%>2" method="get" action="/v_style_set_edit2.html" >
+        <a href="javascript:document.styleSetForm<%=_StyleSet.getId()%>2.submit();">Edit2</a>           
+        <INPUT TYPE="HIDDEN" NAME="id" value="<%= _StyleSet.getId() %>">
+    </form>
+    </td>
+
+    <td>
+    <a href="/styleSetAction.html?del=true&id=<%=_StyleSet.getId()%>"> Delete </a>
+    </td>
+</TR>
+
+<%
+    }
+%>
+</TABLE><%@page language="java" import="java.util.*,com.jtrend.session.*,com.jtrend.util.*,com.autosite.*,com.autosite.ds.*,com.autosite.session.*,com.autosite.db.*,com.autosite.util.*"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+
+<% 
+    Site site = SiteDS.getInstance().registerSite(request.getServerName());
+     SiteConfig siteConfig = SiteConfigDS.getInstance().getSiteConfigBySiteId(site.getId());
+
+    Map reqParams = (Map) session.getAttribute("k_reserved_params");
+    StyleSet _StyleSetDefault = new StyleSet();// StyleSetDS.getInstance().getDeafult();
+    
+    String _nameValue= (reqParams.get("name")==null?WebUtil.display(_StyleSetDefault.getName()):WebUtil.display((String)reqParams.get("name")));
+    String _style_idValue= (reqParams.get("styleId")==null?WebUtil.display(_StyleSetDefault.getStyleId()):WebUtil.display((String)reqParams.get("styleId")));
+    String _data_style_idValue= (reqParams.get("dataStyleId")==null?WebUtil.display(_StyleSetDefault.getDataStyleId()):WebUtil.display((String)reqParams.get("dataStyleId")));
+    String _link_style_idValue= (reqParams.get("linkStyleId")==null?WebUtil.display(_StyleSetDefault.getLinkStyleId()):WebUtil.display((String)reqParams.get("linkStyleId")));
+    String _time_createdValue= (reqParams.get("timeCreated")==null?WebUtil.display(_StyleSetDefault.getTimeCreated()):WebUtil.display((String)reqParams.get("timeCreated")));
+    String _time_updatedValue= (reqParams.get("timeUpdated")==null?WebUtil.display(_StyleSetDefault.getTimeUpdated()):WebUtil.display((String)reqParams.get("timeUpdated")));
+
+    String _wpId = WebProcManager.registerWebProcess();
+
+%> 
+
+<br>
+<form name="styleSetForm" method="post" action="/styleSetAction.html" >
+<TABLE border="0" width="100%" bgcolor="#99dae8" align="center" cellspacing="1">
+
+    	    	    <TR bgcolor="#ffffff">
+	        <TD align="right" ><b>Name</b> &nbsp;</TD>
+	        <TD>&nbsp;<html:text size="70" property="name" value="<%=WebUtil.display(_nameValue)%>"/></TD>
+	    </TR>
+	            	    	    <TR bgcolor="#ffffff">
+	        <TD align="right" ><b>Style Id</b> &nbsp;</TD>
+	        <TD>&nbsp;<html:text size="70" property="styleId" value="<%=WebUtil.display(_style_idValue)%>"/></TD>
+	    </TR>
+	            	    	    <TR bgcolor="#ffffff">
+	        <TD align="right" ><b>Data Style Id</b> &nbsp;</TD>
+	        <TD>&nbsp;<html:text size="70" property="dataStyleId" value="<%=WebUtil.display(_data_style_idValue)%>"/></TD>
+	    </TR>
+	            	    	    <TR bgcolor="#ffffff">
+	        <TD align="right" ><b>Link Style Id</b> &nbsp;</TD>
+	        <TD>&nbsp;<html:text size="70" property="linkStyleId" value="<%=WebUtil.display(_link_style_idValue)%>"/></TD>
+	    </TR>
+	            	            	            <TR bgcolor="#ffffff">
+        <TD></TD>  
+        <TD>
+            <b><a href="javascript:document.styleSetForm.submit();">Submit</a> </b>
+        </TD>
+    </TR>
+</TABLE>    
+
+<INPUT TYPE="HIDDEN" NAME="add" value="true">
+<INPUT TYPE="HIDDEN" NAME="wpid" value="<%= _wpId %>">
+</form>
+
+
+<TABLE border="0" width="100%" bgcolor="#99dae8" align="center" cellspacing="1">
+<%
+    if (false) return;
+
+    List list = StyleSetDS.getInstance().getBySiteId(site.getId());
+ 
+    for(Iterator iter = list.iterator();iter.hasNext();) {
+        StyleSet _StyleSet = (StyleSet) iter.next();
+%>
+<TR bgcolor="#ffffff" valign="top">
+
+    <td> <%= _StyleSet.getId() %> </td>
+
+    <td> <%= WebUtil.display(_StyleSet.getName()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getStyleId()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getDataStyleId()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getLinkStyleId()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getTimeCreated()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getTimeUpdated()) %></td>
+
+
+<td>
+<form name="styleSetForm<%=_StyleSet.getId()%>" method="post" action="/v_style_set_edit.html" >
+    <a href="javascript:document.styleSetForm<%=_StyleSet.getId()%>.submit();">Edit</a>           
+    <INPUT TYPE="HIDDEN" NAME="id" value="<%= _StyleSet.getId() %>">
+</form>
+</td>
+<td>
+<a href="/styleSetAction.html?del=true&id=<%=_StyleSet.getId()%>"> Delete </a>
+</td>
+</TR>
+
+<%
+    }
+%>
+</TABLE><%@page language="java" import="java.util.*,com.jtrend.session.*,com.jtrend.util.*,com.autosite.*,com.autosite.ds.*,com.autosite.session.*,com.autosite.db.*,com.autosite.util.*"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+
+<% 
+    Site site = SiteDS.getInstance().registerSite(request.getServerName());
+     SiteConfig siteConfig = SiteConfigDS.getInstance().getSiteConfigBySiteId(site.getId());
+
+    Map reqParams = (Map) session.getAttribute("k_reserved_params");
+    StyleSet _StyleSetDefault = new StyleSet();// StyleSetDS.getInstance().getDeafult();
+    
+    String _nameValue= (reqParams.get("name")==null?WebUtil.display(_StyleSetDefault.getName()):WebUtil.display((String)reqParams.get("name")));
+    String _style_idValue= (reqParams.get("styleId")==null?WebUtil.display(_StyleSetDefault.getStyleId()):WebUtil.display((String)reqParams.get("styleId")));
+    String _data_style_idValue= (reqParams.get("dataStyleId")==null?WebUtil.display(_StyleSetDefault.getDataStyleId()):WebUtil.display((String)reqParams.get("dataStyleId")));
+    String _link_style_idValue= (reqParams.get("linkStyleId")==null?WebUtil.display(_StyleSetDefault.getLinkStyleId()):WebUtil.display((String)reqParams.get("linkStyleId")));
+    String _time_createdValue= (reqParams.get("timeCreated")==null?WebUtil.display(_StyleSetDefault.getTimeCreated()):WebUtil.display((String)reqParams.get("timeCreated")));
+    String _time_updatedValue= (reqParams.get("timeUpdated")==null?WebUtil.display(_StyleSetDefault.getTimeUpdated()):WebUtil.display((String)reqParams.get("timeUpdated")));
+
+	String retPage = (String) reqParams.get("returnPage");    
+
+    String _wpId = WebProcManager.registerWebProcess();
+
+%> 
+
+<br>
+<div id="styleSetForm_topArea" class="formTopArea"></div>
+<div id="styleSetForm" class="formFrame">
+<div class="fieldSideText" >* Required fields</div>
+<form name="styleSetForm" method="POST" action="/styleSetAction.html" >
+
+
+
+
+	<div id="styleSetForm_name_field">
+    <div id="styleSetForm_name_label" class="formLabel" >Name </div>
+    <div id="styleSetForm_name_text" class="formFieldText" > <span></span>      
+        <input id="field" type="text" size="70" name="name" value="<%=WebUtil.display(_nameValue)%>"/>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+
+	<div id="styleSetForm_styleId_field">
+    <div id="styleSetForm_styleId_label" class="formLabel" >Style Id </div>
+    <div id="styleSetForm_styleId_text" class="formFieldText" > <span></span>      
+        <input id="field" type="text" size="70" name="styleId" value="<%=WebUtil.display(_style_idValue)%>"/>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+
+	<div id="styleSetForm_dataStyleId_field">
+    <div id="styleSetForm_dataStyleId_label" class="formLabel" >Data Style Id </div>
+    <div id="styleSetForm_dataStyleId_text" class="formFieldText" > <span></span>      
+        <input id="field" type="text" size="70" name="dataStyleId" value="<%=WebUtil.display(_data_style_idValue)%>"/>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+
+	<div id="styleSetForm_linkStyleId_field">
+    <div id="styleSetForm_linkStyleId_label" class="formLabel" >Link Style Id </div>
+    <div id="styleSetForm_linkStyleId_text" class="formFieldText" > <span></span>      
+        <input id="field" type="text" size="70" name="linkStyleId" value="<%=WebUtil.display(_link_style_idValue)%>"/>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+
+
+
+
+
+
+        <div id="styleSetForm_submit" class="formSubmit" >       
+            <a id="formSubmit" href="javascript:document.styleSetForm.submit();">Submit</a>
+        </div>      
+
+        <div id="styleSetForm_cancel" class="formCancel" >       
+            <a id="formSubmit" href="javascript:document.styleSetForm.submit();">Cancel</a>
+        </div>      
+
+<INPUT TYPE="HIDDEN" NAME="add" value="true">
+<INPUT TYPE="HIDDEN" NAME="wpid" value="<%= _wpId %>">
+<% if (!WebUtil.isNull(retPage)) {%>
+<INPUT TYPE="HIDDEN" NAME="returnPage" value="<%=retPage%>">
+<%} %>
+
+</form>
+</div> <!-- form -->
+<div id="styleSetForm_bottomArea" class="formBottomArea"></div>
+
+
+<TABLE border="0" width="100%" bgcolor="#99dae8" align="center" cellspacing="1">
+<%
+    if (false) return;
+
+    List list = StyleSetDS.getInstance().getBySiteId(site.getId());
+ 
+    for(Iterator iter = list.iterator();iter.hasNext();) {
+        StyleSet _StyleSet = (StyleSet) iter.next();
+%>
+<TR bgcolor="#ffffff" valign="top">
+
+    <td> <%= _StyleSet.getId() %> </td>
+
+    <td> <%= WebUtil.display(_StyleSet.getName()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getStyleId()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getDataStyleId()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getLinkStyleId()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getTimeCreated()) %></td>
+    <td> <%= WebUtil.display(_StyleSet.getTimeUpdated()) %></td>
+
+
+<td>
+<form name="styleSetForm<%=_StyleSet.getId()%>2" method="get" action="/v_style_set_edit2.html" >
+    <a href="javascript:document.styleSetForm<%=_StyleSet.getId()%>2.submit();">Edit</a>           
+    <INPUT TYPE="HIDDEN" NAME="id" value="<%= _StyleSet.getId() %>">
+</form>
+
+</td>
+<td>
+<a href="/styleSetAction.html?del=true&id=<%=_StyleSet.getId()%>"> Delete </a>
+</td>
+</TR>
+
+<%
+    }
+%>
+</TABLE><%@page language="java" import="java.util.*,com.jtrend.session.*,com.jtrend.util.*,com.autosite.*,com.autosite.ds.*,com.autosite.session.*,com.autosite.db.*,com.autosite.util.*"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+
+<% 
+
+    String idStr  = request.getParameter("id");
+    Site site = SiteDS.getInstance().registerSite(request.getServerName());
+
+    long id = Long.parseLong(idStr);
+
+    StyleSet _StyleSet = StyleSetDS.getInstance().getById(id);
+
+    if ( _StyleSet == null ) {
+        return;
+    }
+
+    String _nameValue=  WebUtil.display(_StyleSet.getName());
+    String _style_idValue=  WebUtil.display(_StyleSet.getStyleId());
+    String _data_style_idValue=  WebUtil.display(_StyleSet.getDataStyleId());
+    String _link_style_idValue=  WebUtil.display(_StyleSet.getLinkStyleId());
+    String _time_createdValue=  WebUtil.display(_StyleSet.getTimeCreated());
+    String _time_updatedValue=  WebUtil.display(_StyleSet.getTimeUpdated());
+%> 
+
+<br>
+<form name="styleSetFormEdit" method="post" action="/styleSetAction.html" >
+<TABLE border="0" width="100%" bgcolor="#99dae8" align="center" cellspacing="1">
+
+    
+        <TR bgcolor="#ffffff">
+        <TD align="right" ><b>Name</b> &nbsp;</TD>
+        <TD>&nbsp;<html:text size="70" property="name" value="<%=WebUtil.display(_nameValue)%>"/></TD>
+    </TR>
+            
+        <TR bgcolor="#ffffff">
+        <TD align="right" ><b>Style Id</b> &nbsp;</TD>
+        <TD>&nbsp;<html:text size="70" property="styleId" value="<%=WebUtil.display(_style_idValue)%>"/></TD>
+    </TR>
+            
+        <TR bgcolor="#ffffff">
+        <TD align="right" ><b>Data Style Id</b> &nbsp;</TD>
+        <TD>&nbsp;<html:text size="70" property="dataStyleId" value="<%=WebUtil.display(_data_style_idValue)%>"/></TD>
+    </TR>
+            
+        <TR bgcolor="#ffffff">
+        <TD align="right" ><b>Link Style Id</b> &nbsp;</TD>
+        <TD>&nbsp;<html:text size="70" property="linkStyleId" value="<%=WebUtil.display(_link_style_idValue)%>"/></TD>
+    </TR>
+            
+            
+            <TR bgcolor="#ffffff">
+        <TD></TD>  
+        <TD>
+            <b><a href="javascript:document.styleSetFormEdit.submit();">Submit</a> </b>
+        </TD>
+    </TR>
+</TABLE>    
+
+<INPUT TYPE="HIDDEN" NAME="edit" value="true">
+<INPUT TYPE="HIDDEN" NAME="id" value="<%=_StyleSet.getId()%>">
+</form>
+<%@page language="java" import="java.util.*,com.jtrend.session.*,com.jtrend.util.*,com.autosite.*,com.autosite.ds.*,com.autosite.session.*,com.autosite.db.*,com.autosite.util.*"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+
+<% 
+	Site site = SiteDS.getInstance().registerSite(request.getServerName());
+     SiteConfig siteConfig = SiteConfigDS.getInstance().getSiteConfigBySiteId(site.getId());
+    
+	AutositeSessionContext sessionContext = (AutositeSessionContext) session.getAttribute("k_session_context");
+    String idStr  = request.getParameter("id");
+    Map reqParams = (Map) session.getAttribute("k_reserved_params");
+
+	if (idStr == null) idStr = "0";
+    long id = Long.parseLong(idStr);
+
+    StyleSet _StyleSet = StyleSetDS.getInstance().getById(id);
+
+    if ( _StyleSet == null ) {
+        return;
+    }
+
+
+	String retPage = (String) reqParams.get("returnPage");    
+
+    String _nameValue=  WebUtil.display(_StyleSet.getName());
+    String _style_idValue=  WebUtil.display(_StyleSet.getStyleId());
+    String _data_style_idValue=  WebUtil.display(_StyleSet.getDataStyleId());
+    String _link_style_idValue=  WebUtil.display(_StyleSet.getLinkStyleId());
+    String _time_createdValue=  WebUtil.display(_StyleSet.getTimeCreated());
+    String _time_updatedValue=  WebUtil.display(_StyleSet.getTimeUpdated());
+%> 
+
+<br>
+<div id="styleSetForm" class="formFrame">
+<div style="font-size:12px;color:red;margin-left:170px;">* Required fields</div>
+<form name="styleSetFormEdit" method="POST" action="/styleSetAction.html" >
+
+
+
+
+	<div id="styleSetForm_name_field">
+    <div id="styleSetForm_name_label" class="formLabel" >Name </div>
+    <div id="styleSetForm_name_text" class="formFieldText" >       
+        <input id="field" type="text" size="70" name="name" value="<%=WebUtil.display(_nameValue)%>"/> <span></span>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+	<div id="styleSetForm_styleId_field">
+    <div id="styleSetForm_styleId_label" class="formLabel" >Style Id </div>
+    <div id="styleSetForm_styleId_text" class="formFieldText" >       
+        <input id="field" type="text" size="70" name="styleId" value="<%=WebUtil.display(_style_idValue)%>"/> <span></span>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+	<div id="styleSetForm_dataStyleId_field">
+    <div id="styleSetForm_dataStyleId_label" class="formLabel" >Data Style Id </div>
+    <div id="styleSetForm_dataStyleId_text" class="formFieldText" >       
+        <input id="field" type="text" size="70" name="dataStyleId" value="<%=WebUtil.display(_data_style_idValue)%>"/> <span></span>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+	<div id="styleSetForm_linkStyleId_field">
+    <div id="styleSetForm_linkStyleId_label" class="formLabel" >Link Style Id </div>
+    <div id="styleSetForm_linkStyleId_text" class="formFieldText" >       
+        <input id="field" type="text" size="70" name="linkStyleId" value="<%=WebUtil.display(_link_style_idValue)%>"/> <span></span>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+
+
+        <div id="styleSetFormEdit_submit" class="formSubmit" >       
+            <a id="formSubmit" href="javascript:document.styleSetFormEdit.submit();">Submit</a>
+        </div>      
+
+<INPUT TYPE="HIDDEN" NAME="edit" value="true">
+<INPUT TYPE="HIDDEN" NAME="id" value="<%=_StyleSet.getId()%>">
+<% if (!WebUtil.isNull(retPage)) {%>
+<INPUT TYPE="HIDDEN" NAME="returnPage" value="<%=retPage%>">
+<%} %>
+</form>
+</div> <!-- form -->
+<%@page language="java" import="java.util.*,com.jtrend.session.*,com.jtrend.util.*,com.autosite.*,com.autosite.ds.*,com.autosite.session.*,com.autosite.db.*,com.autosite.util.*"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+
+<% 
+    Site site = SiteDS.getInstance().registerSite(request.getServerName());
+     SiteConfig siteConfig = SiteConfigDS.getInstance().getSiteConfigBySiteId(site.getId());
+
+	AutositeSessionContext sessionContext = (AutositeSessionContext) session.getAttribute("k_session_context");
+	String listAllByAdmin = request.getParameter("listAllByAdmin");
+	
+	boolean showListAllByAdmin = false;
+	if ( sessionContext.isSuperAdminLogin() && WebUtil.isTrue(listAllByAdmin)){
+		showListAllByAdmin = true;
+	}
+
+	List list = new ArrayList();
+	StyleSetDS ds = StyleSetDS.getInstance();    
+
+	if (showListAllByAdmin)
+		list = ds.getAll();
+	else		
+    	list = ds.getBySiteId(site.getId());
+	SiteDS siteDS = SiteDS.getInstance();
+
+
+%> 
+<!-- =================== PAGING =================== -->
+<%
+	String uri = (String) session.getAttribute("k_request_uri");
+
+	int defaultNumDisplay = 10;
+	int numDisplayInPage = WebParamUtil.getIntValue(request.getParameter("numInPage"), defaultNumDisplay);;
+	int listPage = WebParamUtil.getIntValue(request.getParameter("listPage"), 1);
+	String optionQueryStr = "";
+	if (showListAllByAdmin) optionQueryStr += "&listAllByAdmin=true";
+
+
+	PagingInfo pagingInfo = PagingUtil.getPageDisplayInfo(list, numDisplayInPage, listPage);
+
+	list = PagingUtil.getPagedList(pagingInfo, list);
+	String html = PagingUtil.createPagingHtmlFromPagingInfo(pagingInfo, uri, optionQueryStr, listPage);
+	
+%>	
+<%= html %>
+
+<!-- =================== END PAGING =================== -->
+
+<a href="t_style_set_form.html?prv_returnPage=style_set_home"> Add New 2</a> <br>
+
+
+<TABLE class="mytable1">
+
+<TR >
+    <td class="columnTitle"> ID </td>
+<%	
+	if (showListAllByAdmin) {
+%>
+    <td class="columnTitle"> Site </td> 
+	
+<% 	} %>
+    <td class="columnTitle">  Name </td> 
+    <td class="columnTitle">  Style Id </td> 
+    <td class="columnTitle">  Data Style Id </td> 
+    <td class="columnTitle">  Link Style Id </td> 
+    <td class="columnTitle">  Time Created </td> 
+    <td class="columnTitle">  Time Updated </td> 
+</TR>
+
+<%
+
+    for(Iterator iter = list.iterator();iter.hasNext();) {
+        StyleSet _StyleSet = (StyleSet) iter.next();
+%>
+
+<TR>
+    <td> <%= _StyleSet.getId() %> </td>
+
+<%	
+	if (showListAllByAdmin) {
+	long siteId = _StyleSet.getSiteId();
+	Site st = siteDS.getById(siteId);
+	
+	String siteName = (st == null? "XXX="+siteId: st.getSiteUrl());	
+	
+%>
+    <td><%= siteName %></td> 
+	
+<% 	} %>
+    
+	<td> <%= _StyleSet.getName()  %> </td>
+	<td> <%= _StyleSet.getStyleId()  %> </td>
+	<td> <%= _StyleSet.getDataStyleId()  %> </td>
+	<td> <%= _StyleSet.getLinkStyleId()  %> </td>
+	<td> <%= _StyleSet.getTimeCreated()  %> </td>
+	<td> <%= _StyleSet.getTimeUpdated()  %> </td>
+</TR>
+
+<%
+    }
+%>
+</TABLE><%@page language="java" import="java.util.*,com.jtrend.session.*,com.jtrend.util.*,com.autosite.*,com.autosite.ds.*,com.autosite.session.*,com.autosite.db.*,com.autosite.util.*"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+
+<% 
+	Site site = SiteDS.getInstance().registerSite(request.getServerName());
+     SiteConfig siteConfig = SiteConfigDS.getInstance().getSiteConfigBySiteId(site.getId());
+    
+	AutositeSessionContext sessionContext = (AutositeSessionContext) session.getAttribute("k_session_context");
+    Map reqParams = (Map) session.getAttribute("k_reserved_params");
+
+	String command = request.getParameter("cmd");
+
+    String idStr  = "0";
+    StyleSet _StyleSet = null;
+	
+	boolean isEdit = false;	
+	String _wpId = null;
+
+	if (command != null && command.equalsIgnoreCase("edit")){
+	    long id = WebParamUtil.getLongValue(request.getParameter("id"));
+		_StyleSet = StyleSetDS.getInstance().getById(id);
+		if ( _StyleSet == null) {
+			JspUtil.getLogger().error("Object not found by id=" + id);
+			isEdit = false;
+		} else {
+			isEdit = true;
+		}
+        
+	} 
+
+	// If no object found, proceed as a create
+	if ( !isEdit) {
+	    _StyleSet = new StyleSet();// StyleSetDS.getInstance().getDeafult();
+    	_wpId = WebProcManager.registerWebProcess();
+
+	}	
+
+
+	String retPage = (String) reqParams.get("returnPage");    
+
+    String _nameValue= (reqParams.get("name")==null?WebUtil.display(_StyleSet.getName()):WebUtil.display((String)reqParams.get("name")));
+    String _style_idValue= (reqParams.get("styleId")==null?WebUtil.display(_StyleSet.getStyleId()):WebUtil.display((String)reqParams.get("styleId")));
+    String _data_style_idValue= (reqParams.get("dataStyleId")==null?WebUtil.display(_StyleSet.getDataStyleId()):WebUtil.display((String)reqParams.get("dataStyleId")));
+    String _link_style_idValue= (reqParams.get("linkStyleId")==null?WebUtil.display(_StyleSet.getLinkStyleId()):WebUtil.display((String)reqParams.get("linkStyleId")));
+    String _time_createdValue= (reqParams.get("timeCreated")==null?WebUtil.display(_StyleSet.getTimeCreated()):WebUtil.display((String)reqParams.get("timeCreated")));
+    String _time_updatedValue= (reqParams.get("timeUpdated")==null?WebUtil.display(_StyleSet.getTimeUpdated()):WebUtil.display((String)reqParams.get("timeUpdated")));
+%> 
+
+<br>
+<div id="styleSetForm" class="formFrame">
+<div style="font-size:12px;color:red;margin-left:170px;">* Required fields</div>
+<form name="styleSetFormEdit" method="POST" action="/styleSetAction.html" >
+
+
+
+
+	<div id="styleSetForm_name_field">
+    <div id="styleSetForm_name_label" class="formLabel" >Name </div>
+    <div id="styleSetForm_name_text" class="formFieldText" >       
+        <input id="field" type="text" size="70" name="name" value="<%=WebUtil.display(_nameValue)%>"/> <span></span>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+	<div id="styleSetForm_styleId_field">
+    <div id="styleSetForm_styleId_label" class="formLabel" >Style Id </div>
+    <div id="styleSetForm_styleId_text" class="formFieldText" >       
+        <input id="field" type="text" size="70" name="styleId" value="<%=WebUtil.display(_style_idValue)%>"/> <span></span>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+	<div id="styleSetForm_dataStyleId_field">
+    <div id="styleSetForm_dataStyleId_label" class="formLabel" >Data Style Id </div>
+    <div id="styleSetForm_dataStyleId_text" class="formFieldText" >       
+        <input id="field" type="text" size="70" name="dataStyleId" value="<%=WebUtil.display(_data_style_idValue)%>"/> <span></span>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+	<div id="styleSetForm_linkStyleId_field">
+    <div id="styleSetForm_linkStyleId_label" class="formLabel" >Link Style Id </div>
+    <div id="styleSetForm_linkStyleId_text" class="formFieldText" >       
+        <input id="field" type="text" size="70" name="linkStyleId" value="<%=WebUtil.display(_link_style_idValue)%>"/> <span></span>
+    </div>      
+	</div><div class="clear"></div>
+
+
+
+
+
+        <div id="styleSetFormEdit_submit" class="formSubmit" >       
+            <a id="formSubmit" href="javascript:document.styleSetFormEdit.submit();">Submit</a>
+        </div>      
+
+<% if (isEdit) { %>
+
+<INPUT TYPE="HIDDEN" NAME="edit" value="true">
+<INPUT TYPE="HIDDEN" NAME="id" value="<%=_StyleSet.getId()%>">
+
+<% } else { %>
+<INPUT TYPE="HIDDEN" NAME="add" value="true">
+<INPUT TYPE="HIDDEN" NAME="wpid" value="<%= _wpId %>">
+
+<% } %>
+
+
+<% if (!WebUtil.isNull(retPage)) {%>
+<INPUT TYPE="HIDDEN" NAME="returnPage" value="<%=retPage%>">
+<%} %>
+</form>
+</div> <!-- form -->
+

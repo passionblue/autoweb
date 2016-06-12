@@ -1,0 +1,95 @@
+/*
+
+Styles currently used for panels inside content section. 
+
+contents/content_panel/panel_dynamic_menu_content_section.jsp
+
+*/
+
+/******************************************************************************************/
+THis is table that holds the columns of data. 
+*/
+
+div.panel table.content-panel-table {
+	border: 10px; 
+	background-color: red;
+	width: 100%;
+	cellpadding: 0px;
+	cellspacing: 0px; 
+	border-collapse: collapse; 
+	border-spacing: 0px;
+}
+
+div.panel table.content-panel-table td.content-panel-table-td{
+	padding: 10px;  
+}
+
+/******************************************************************************************/
+/***************** data-content ***********************************************************/
+/******************************************************************************************/
+
+div.panel div.content-panel-frame {
+	padding: 10px;
+	background-color: #ffffff; 
+}
+
+div.panel div.content-panel-subject {
+	background-color: #ffffff; 
+	font: normal normal bold 14px verdana;
+	padding: 0px 0px 10px 0px;
+}
+
+div.panel div.content-panel-data {
+	background-color: #ffffff;
+}
+
+/******************************************************************************************/
+/***************** link-content *****************/
+/******************************************************************************************/
+
+div.content-link a {
+	display: block;
+	border: 0px dotted blue;
+	text-decoration: none;
+	color : #909090;
+	text-align: center;
+	background-color: white;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div.content-link a:hover {
+	display: block;
+	border: 0px solid blue;
+	text-decoration: none; 
+	color : black;
+	background-color: white;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div#link-contentdefaultcontentlinks a {
+	display: block;
+	border: 0px dotted blue;
+	text-decoration: none;
+	color : #909090;
+	text-align: center;
+	background-color: transparent;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div#link-contentdefaultcontentlinks a:hover {
+	display: block;
+	border: 0px solid blue;
+	text-decoration: none; 
+	color : black;
+	background-color: transparent;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+

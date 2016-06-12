@@ -1,0 +1,15 @@
+
+Tomcat 
+
+D:\ApacheTomcat\apache-tomcat-8.0.30
+
+Runtime
+
+D:\eclipseSDK-workspace\mars\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\autoweb
+
+Configs 
+
+-Dcatalina.base="D:\eclipseSDK-workspace\mars\.metadata\.plugins\org.eclipse.wst.server.core\tmp0" 
+-Dcatalina.home="D:\ApacheTomcat\apache-tomcat-8.0.30" 
+-Dwtp.deploy="D:\eclipseSDK-workspace\mars\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps" 
+-Djava.endorsed.dirs="D:\ApacheTomcat\apache-tomcat-8.0.30\endorsed" 

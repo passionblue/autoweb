@@ -1,0 +1,336 @@
+
+div.pollImgUnselected {
+	border: 5px transparent solid;
+}
+
+div.pollImgSelected {
+	border: 5px orange solid;
+}
+
+img.pollOptionImg {
+	width: 200px;
+	height: 150px;
+	border: 5px transparent solid;
+	
+}
+
+img.pollOptionImgSelected {
+	width: 200px;
+	height: 150px;
+	border: 5px #ED4A09 solid;
+}
+
+/* ========== Poll Create Page ================= */
+.formFramePoll{
+	padding: 20px;
+	background-color: #4CC7B0;
+}
+
+/* ========== Poll Display ================= */
+div.pollDispFrame{
+	padding: 15 15 15 15;
+	background-color: #F2D7F5;
+	/* background: #F2D7F5 url(/images/ocean.jpg) repeat scroll top left; */
+}
+div.pollDispCategory{
+	font: normal normal bold 12px Verdana;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 20px 0px;		
+}
+
+div.pollDispQuestion{
+	font: normal normal bold 20px Verdana;
+	margin: 0px 0px 30px 0px;
+	
+}
+
+div.pollDispAnswer{
+	font: normal normal bold 15px Verdana;
+	margin: 0px 0px 5px 0px;
+}
+
+
+div.pollDispAnswerControl{
+	border: 1px solid #8CC9F5;
+	float: left;
+	margin-right: 5px;
+	padding: 3px 0px 3px 0px;
+	background-color: white;
+}
+
+div.pollDispAnswerText{
+	border: 1px solid #8CC9F5;
+	float: left;
+	width: 415px;
+	padding: 3px 0px 3px 10px;
+	color: black;
+	background-color: white;
+}
+
+div.pollDispAnswerTextSelected{
+	border: 1px solid #8CC9F5;
+	float: left;
+	width: 415px;
+	padding: 3px 0px 3px 10px;
+	color: #ED5426;
+}
+
+
+
+div.pollDispSubmitFrame{
+	margin: 20px 0px 0px 5px;
+}
+
+div.pollDispSubmitFrame a{
+	background-color: #BA463D;
+	color: white;
+	padding: 5px 20px 5px 20px;
+}
+
+div.pollDispSubmitFrame a:hover{
+	background-color: black;
+	color: white;
+	padding: 5px 20px 5px 20px;
+}
+
+
+
+div.pollDispAnswerYesNo{
+	font: normal normal bold 20px Verdana;
+	float: left;
+	margin: 0px 20px 0px 0px;
+}
+
+div.pollDispAnswerTextYesNo{
+	border: 1px solid #8CC9F5;
+	float: left;
+	width: 100px;
+	height: 45px;
+	padding: 30px 0px 30px 0px;
+	text-align: center;
+	color: #888;
+	background-color: white;
+}
+
+div.pollDispAnswerTextYesNoSelected{
+	font: normal normal bold 25px Verdana;
+	border: 1px solid #8CC9F5;
+	float: left;
+	width: 100px;
+	padding: 30px 0px 30px 0px;
+	height: 45px;
+	color: blue;
+	text-align: center;
+	background-color: white;
+}
+
+div.pollDispAnswerScale{
+	font: normal normal bold 15px Verdana;
+	margin: 0px 3px 5px 0px;
+	float: left;
+}
+
+div.pollDispAnswerScaleText{
+	border: 1px solid #8CC9F5;
+	float: left;
+	width: 30px;
+	text-align: center;
+	padding: 3px 5px 3px 5px;
+	color: black;
+	background-color: white;
+	cursor: pointer;
+	cursor: hand;
+}
+
+div.pollDispAnswerScaleTextSelected{
+	border: 1px solid #8CC9F5;
+	float: left;
+	width: 30px;
+	padding: 3px 5px 3px 5px;
+	color: #ED5426;
+	background-color: blue;
+}
+
+
+
+/* ========== Poll Display ================= */
+
+
+div.pollSendctionMenu{
+	padding: 0px 0px 0px 10px;
+	font: normal normal normal 10px verdana;
+	border-bottom: #D695E8 solid 1px;	
+}
+
+div.pollSingleFrame{
+	border: #8DBEFC solid 3px;
+	 margin: 10px 10px 10px 10px; 
+	 padding: 10px 10px 10px 10px; 
+	 background-color: white;
+}
+div.pollSectionFront{
+	display: block;
+	width: 530px;
+	float:left;
+	border: #D695E8 solid 1px; 
+	padding: auto	
+}
+div.pollDispFrame {
+	
+}
+
+div.pollRefFrame {
+	
+}
+
+
+div.resultSectionFront{
+	display: block;
+	width: 400px;	
+	float:right;
+	border: #D695E8 solid 0px;
+}
+
+
+
+div#addEntry {
+	cursor: pointer;
+	cursor: hand;
+}
+
+a#voteSubmitAjax{
+	cursor: pointer;
+	cursor: hand;
+}
+
+a#voteResultAjax{
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* **** Styles for Ajax Result  ************* */
+
+div.pollResultTitle{
+	text-align: center;
+	font: normal normal bold 20px verdana;
+}
+
+div.pollResult{
+}
+div.resultNumVotes{
+}
+div.pollResult{
+}
+
+div.pollResultDetail{
+	margin: 0px 0px 30px 0px;
+		
+}
+
+div.pollResultDetailLine{
+	border-bottom: #8DBEFC solid 1px;
+	padding: 5px 10px 10px 10px;
+	margin: 0px 0px 5px 0px;
+}
+div.pollResultDetailText{
+	float:left;
+	width: 350px;
+	font: normal normal bold 15px verdana;
+}
+div.pollResultDetailCount{
+	float:left;
+	width: 50px;
+	font: normal normal bold 15px verdana;
+}
+
+/* **** Styles for Result On Single Page  ************* */
+
+div.pollResultSingle{
+	padding: 30px 10px 0px 10px;
+}
+div.pollResultSingleQuestion{
+	font: normal normal bold 25px verdana;
+	margin: 0px 0px 20px 0px;
+}
+div.pollResultSingleDetailLine{
+	padding: 5px 10px 0px 10px;
+	margin-bottom: 2px;
+	background-color: #4278F5;
+	color: white;
+}
+div.pollResultSingleDetailText{
+	float:left;
+	font: normal normal bold 15px verdana;
+	text-align: left;
+	padding: 5px 0px 5px 0px;
+}
+div.pollResultSingleDetailCount{
+	float:left;
+	width: 50px;
+	text-align: left;
+	font: normal normal bold 15px verdana;
+	padding: 5px 0px 5px 0px;
+}
+
+/* comments */
+div.pollCommentListFrame{
+	padding: 5px 10px 0px 10px;
+}
+div.pollCommentLine{
+	width: 100%;
+	border-bottom: black solid 0px;
+	background-color: #eee;
+	margin-bottom: 3px;
+}
+div.pollCommentText{
+	float: left;
+	padding: 5px 0px 5px 10px;
+}
+div.pollCommentTime{
+	float:right;
+	text-align: left;
+	padding: 5px 10px 5px 0px;
+	font-size: 9px;
+}
+
+/* table */
+
+div#pollComments{
+}
+
+div#pollComments table {
+	background-color: #e5e5e5;
+	border: 1px solid #6699CC ;
+	border-collapse: collapse;
+	margin: 10px 10px 10px 10px;
+	width: 98%;
+}	
+
+div#pollComments table tr td.pollCommHeader{
+	font: normal normal bold 20px verdana;
+	border-bottom: 2px solid #6699CC ;
+	padding: 5px 5px 5px 5px;
+	background: #e5e5e5 url('/images/reply-e5e5e5.gif') repeat-x scroll top;
+}	
+
+div#pollComments table tr td{
+	font: normal normal normal 12px verdana;
+	border: 1px solid #6699CC ;
+	padding: 5px 5px 5px 5px;
+}
+
+div#pollComments table tr td.pollCommText{
+	font: normal normal normal 12px verdana;
+	border: 1px solid #6699CC ;
+	padding: 5px 5px 5px 5px;
+	background: #e5e5e5 url('/images/reply-e5e5e5.gif') repeat-x scroll top;
+}	
+
+div#pollComments table tr td.pollCommTime{
+	vertical-align: bottom;
+	font: normal normal normal 9px verdana;
+	background: #e5e5e5 url('/images/reply-e5e5e5.gif') repeat-x scroll top;
+	border: 1px solid #6699CC;
+	padding: 5px 5px 5px 5px;
+	width: 150px;
+}	

@@ -1,0 +1,123 @@
+
+table.blogMenuTable {
+	border: 1px solid #666666;
+	border-collapse: collapse;
+	height: 30px;
+}
+
+td.blogMenuTable { 
+	border: 1px solid #666666;
+	height: 20px; 
+}
+th.blogMenuTable { 
+	border: 1px solid #666666; 
+}
+
+div#blogMainTitle{
+	font: normal normal bold 20px Verdana;
+	color: gray;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+div#blogListFrame{
+}
+
+div#blogPostFrame{
+	border: #bbb solid 1px;
+	margin: 0px 20px 20px 20px;
+	padding: 0px 20px 20px 20px;
+}
+
+div#blogPostHeading{
+	margin: 0px 0px 20px 0px;
+}
+
+div#blogPostSubject{
+	font: normal normal bold 18px Tahoma;
+	border-bottom: 1px solid #666666;
+	padding: 10px 0px 10px 0px;
+}
+div#blogPostCategory{
+	font: normal normal bold 10px Tahoma;
+}
+div#blogPostTime{
+	font: normal normal bold 10px Tahoma;
+	color: #888888;
+}
+
+div#blogPostControl{
+	padding-left: 20px;
+}
+div#blogPostControl a{
+	font: normal normal bold 9px Tahoma;
+	text-decoration: none;
+}
+
+div#blogPostFooter{
+}
+
+div#blogPostTags{
+	font: normal normal bold 10px Tahoma;
+}
+
+
+
+/* ======= SINGLE POST ============ */
+div#blogPostSingleFrame{
+	
+}
+div#blogPostSingleSubject{
+	margin: 20px 0px 20px 0px;
+	padding: 5px 0px 5px 10px;
+	font: normal normal bold 18px Verdana;
+	background-color: #bbb;
+}
+div#blogPostSingleContent{
+	
+}
+
+.controlLabel{
+	float: left;
+	margin-right: 10px;
+}
+
+.controlEmail{
+	float: left;
+	margin-right: 10px;
+}
+.controlShare{
+	float: left;
+	margin-right: 10px;
+}
+.controlTweet{
+	float: left;
+	margin-right: 10px;
+}
+.controlComment{
+	float: left;
+	margin-right: 10px;
+}
+
+/* ======= Comments ============ */
+
+div#blogCommentList{
+}
+div#blogCommentFrame{
+	margin: 0px 0px 20px 0px;
+}
+div#blogCommentBy{
+	font: normal normal bold 11px Verdana;
+}
+div#blogCommentTime{
+	font: normal normal normal 8px Verdana;
+}
+div#blogComment{
+	margin: 5px 0px 5px 0px;
+	padding: 0px 0px 0px 20px;
+	font: normal normal normal 12px Verdana;
+}
+div#blogCommentForm{
+}
+
+

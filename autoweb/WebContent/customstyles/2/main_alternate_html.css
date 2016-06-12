@@ -1,0 +1,40 @@
+
+p.content{
+	font-size: 12px;
+	line-height: 17px;
+	margin:0 0 10px 0;
+	padding:0;
+}
+
+p.post{
+	font-size: 12px;
+	line-height: 17px;
+	margin:0 0 10px 0;
+	padding:0;
+}
+
+p.menu{
+	font-size: 12px;
+	line-height: 17px;
+	margin:0 0 10px 0;
+	padding:0;
+}
+
+td {
+	font-family: verdana; 
+	margin: 0 1px 0 0; 
+	font-size: 12px;
+	vertical-align: top;
+}
+
+img {
+	/* border: 0; this prevents local border not effective*/
+	display: inline;
+	border-color: transparent;
+}
+
+img.border_transparent {
+	border: 10px; 
+	display: inline;
+	border-color: transparent;
+}

@@ -1,0 +1,145 @@
+
+.panel-title {
+	font: normal normal bold 12px verdana;
+	padding: 5px 0px 5px 0px;
+	text-align: left;
+	background-color: #AAEEDD;	
+	text-align: center;
+}
+
+div#header-wrapper div#panelSTSTYLE1{
+	width: 100%;
+	margin: 0px 0px 0px 0px; 
+	border:0px solid #0A6C4A;
+	background-color: black;	
+	padding: 0 0 0 0;	
+}
+
+div#content-wrapper div#menu-section div#panelSTSTYLE1{
+	width: 100%;
+	margin: 0 0 0 0; 
+	background-color: black;
+	border: 0px solid blue;
+	padding: 0 0 0 0;	
+}
+
+div#content-wrapper div#ad-section div#panelSTSTYLE1{
+	width: 100%;
+	margin: 0 0 0 0; 
+	background-color: black;
+	border: 0px solid blue;
+	padding: 0 0 0 0;	
+}
+
+
+div#link-contentSTSTYLE1 a {
+	display: block;
+	border: 0px dotted blue;
+	text-decoration: none;
+	color : #909090;
+	text-align: right;
+	background-color: white;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div#link-contentSTSTYLE1 a:hover {
+	display: block;
+	border: 0px solid blue;
+	text-decoration: none; 
+	color : black;
+	background-color: yellow;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+	text-align: right;
+}
+
+/* ------------ Header Menu ------------------------------ */
+
+div#header-wrapper div#header-menuSTSTYLE1 ul#navSTSTYLE1{
+	list-style-type: none;
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px; 
+	/*background: pink url(http://www.oxo5.com/images/header4.jpg) no-repeat 0px 0px;*/
+	border: 1px solid blue;
+	display:list-item;
+}
+
+div#header-wrapper div#header-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1{
+	margin: 0px 10px 0px 10px;
+	font: normal normal bold 12px tahoma;
+	float: left;
+}
+
+div#header-wrapper div#header-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1 a{
+	display: block;
+	height: 20px;
+	border: 1px dotted blue;
+	padding: 5px 5px 5px 5px;
+	color: white;
+	background-color: black;
+}
+
+div#header-wrapper div#header-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1 a:hover,
+div#header-wrapper div#header-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1 a:active,
+div#header-wrapper div#header-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1 a.active{
+	display: block;
+	height: 20px;
+	color: #495135;
+	background-color: #e1e9d9;
+	border: 1px solid blue;
+	text-decoration: none;
+	padding: 5px 5px 5px 5px;
+	outline: none;
+}
+
+
+/* ------------ Side Menu ------------------------------ */
+
+div#content-wrapper div#menu-section div#side-menuSTSTYLE1 ul#navSTSTYLE1{
+	width: 100%;
+	list-style-type: none;
+	text-align: left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background-color: transparent;
+}
+
+div#content-wrapper div#menu-section div#side-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1{
+	margin: 0px 0px 5px 0px;
+	padding: 0px 0px 0px 0px;
+	font: normal normal bold 12px verdana;
+	height: 24px;
+}
+
+div#content-wrapper div#menu-section div#side-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1 a{
+	height: 20px;
+	display: block;
+	border: 0px dotted blue;
+	margin: auto;
+	padding: 5px 0px 0px 0px;
+	text-align: center;
+	color: #780821;
+}
+
+div#content-wrapper div#menu-section div#side-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1 a:hover,
+div#content-wrapper div#menu-section div#side-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1 a:active,
+div#content-wrapper div#menu-section div#side-menuSTSTYLE1 ul#navSTSTYLE1 li#nav-itemSTSTYLE1 a.active{
+	height: 20px;
+	display: block;
+	color: #ffffff;
+	border: 0px solid blue;
+	background-color: black;
+	outline: none;
+	text-decoration: none;
+	padding: 5px 0px 0px 0px;
+	margin: auto;
+	text-align: center;
+}
+
+
+
+

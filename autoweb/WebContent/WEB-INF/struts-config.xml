@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="login_form" type="com.surveygen.struts.form.LoginForm" />
+		<form-bean name="loginForm" type="com.surveygen.struts.form.LoginForm" />
+		<form-bean name="addContentForm" type="com.autosite.struts.form.AddContentForm" />
+		<form-bean name="addPageForm" type="com.autosite.struts.form.AddPageForm" />
+		<form-bean name="addDynContentForm" type="com.autosite.struts.form.AddDynContentForm" />
+		<form-bean name="siteConfigForm" type="com.autosite.struts.form.SiteConfigForm" />
+		<form-bean name="siteHeaderForm" type="com.autosite.struts.form.SiteHeaderForm" />
+		<form-bean name="siteConfigStyleForm"
+			type="com.autosite.struts.form.SiteConfigStyleForm" />
+		<form-bean name="contentAdForm" type="com.autosite.struts.form.ContentAdForm" />
+		<form-bean name="fileupForm" type="com.autosite.struts.form.FileupForm" />
+		<form-bean name="velocityMainForm" type="com.autosite.struts.form.VelocityMainForm" />
+		<form-bean name="forumCategoryForm" type="com.autosite.struts.form.ForumCategoryForm" />
+		<form-bean name="forumSectionForm" type="com.autosite.struts.form.ForumSectionForm" />
+		<form-bean name="forumSubjectForm" type="com.autosite.struts.form.ForumSubjectForm" />
+		<form-bean name="forumPostForm" type="com.autosite.struts.form.ForumPostForm" />
+		<form-bean name="panelForm" type="com.autosite.struts.form.PanelForm" />
+		<form-bean name="styleConfigForm" type="com.autosite.struts.form.StyleConfigForm" />
+		<form-bean name="panelStyleForm" type="com.autosite.struts.form.PanelStyleForm" />
+		<form-bean name="linkStyleConfigForm"
+			type="com.autosite.struts.form.LinkStyleConfigForm" />
+		<form-bean name="panelLinkStyleForm"
+			type="com.autosite.struts.form.PanelLinkStyleForm" />
+		<form-bean name="resourceListForm" type="com.autosite.struts.form.ResourceListForm" />
+		<form-bean name="panelPageConfigForm"
+			type="com.autosite.struts.form.PanelPageConfigForm" />
+		<form-bean name="registerSimpleForm"
+			type="com.autosite.struts.form.RegisterSimpleForm" />
+		<form-bean name="pageConfigForm" type="com.autosite.struts.form.PageConfigForm" />
+		<form-bean name="emailSubsForm" type="com.autosite.struts.form.EmailSubsForm" />
+		<form-bean name="pageStaticAltForm" type="com.autosite.struts.form.PageStaticAltForm" />
+		<form-bean name="pageForm" type="com.autosite.struts.form.PageForm" />
+		<form-bean name="linktoForm" type="com.autosite.struts.form.LinktoForm" />
+		<form-bean name="pageStaticConfigForm"
+			type="com.autosite.struts.form.PageStaticConfigForm" />
+		<form-bean name="styleSetForm" type="com.autosite.struts.form.StyleSetForm" />
+		<form-bean name="styleSetContentForm"
+			type="com.autosite.struts.form.StyleSetContentForm" />
+		<form-bean name="metaHeaderForm" type="com.autosite.struts.form.MetaHeaderForm" />
+		<form-bean name="devNoteForm" type="com.autosite.struts.form.DevNoteForm" />
+		<form-bean name="testDataDepotForm" type="com.autosite.struts.form.TestDataDepotForm" />
+		<form-bean name="whoisDataForm" type="com.autosite.struts.form.WhoisDataForm" />
+		<form-bean name="menuItemForm" type="com.autosite.struts.form.MenuItemForm" />
+
+		<form-bean name="styleThemeForm" type="com.autosite.struts.form.StyleThemeForm" />
+	    <form-bean name="themeAggregatorForm" type="com.autosite.struts.form.ThemeAggregatorForm" />
+		<form-bean name="themeStylesForm" type="com.autosite.struts.form.ThemeStylesForm" />
+		
+		<form-bean name="devTableForm" type="com.autosite.struts.form.DevTableForm" />
+		<form-bean name="contentConfigForm" type="com.autosite.struts.form.ContentConfigForm" />
+		<form-bean name="pageContentConfigForm"
+			type="com.autosite.struts.form.PageContentConfigForm" />
+
+		<form-bean name="genMainForm" type="com.autosite.struts.form.GenMainForm" />
+		<form-bean name="genSubForm" type="com.autosite.struts.form.GenSubForm" />
+		<form-bean name="genExtraForm" type="com.autosite.struts.form.GenExtraForm" />
+		<form-bean name="genCompForm" type="com.autosite.struts.form.GenCompForm" />
+		<form-bean name="genMainCompMapForm"
+			type="com.autosite.struts.form.GenMainCompMapForm" />
+
+		<form-bean name="ecProductForm" type="com.autosite.struts.form.EcProductForm" />
+		<form-bean name="ecCategoryForm" type="com.autosite.struts.form.EcCategoryForm" />
+		<form-bean name="ecDisplayConfigForm"
+			type="com.autosite.struts.form.EcDisplayConfigForm" />
+		<form-bean name="ecUserProductReviewForm"
+			type="com.autosite.struts.form.EcUserProductReviewForm" />
+		<form-bean name="ecWishListForm" type="com.autosite.struts.form.EcWishListForm" />
+		<form-bean name="ecPageProductRelForm"
+			type="com.autosite.struts.form.EcPageProductRelForm" />
+		<form-bean name="ecCheckoutAccountInfoForm"
+			type="com.autosite.struts.form.EcCheckoutAccountInfoForm" />
+		<form-bean name="ecCheckoutPaymentWithoutRegisterForm"
+			type="com.autosite.struts.form.EcCheckoutPaymentWithoutRegisterForm" />
+
+		<form-bean name="siteRegStartForm" type="com.autosite.struts.form.SiteRegStartForm" />
+		<form-bean name="siteRegAccountServiceInfoForm"
+			type="com.autosite.struts.form.SiteRegAccountServiceInfoForm" />
+		<form-bean name="siteRegPaymentInfoForm"
+			type="com.autosite.struts.form.SiteRegPaymentInfoForm" />
+		<form-bean name="siteRegConfirmForm"
+			type="com.autosite.struts.form.SiteRegConfirmForm" />
+
+		<form-bean name="siteForm" type="com.autosite.struts.form.SiteForm" />
+		<form-bean name="siteSuggestForm" type="com.autosite.struts.form.SiteSuggestForm" />
+		<form-bean name="blockListForm" type="com.autosite.struts.form.BlockListForm" />
+	    <form-bean name="resourceInclusionForm" type="com.autosite.struts.form.ResourceInclusionForm" />
+
+
+		<form-bean name="blogMainForm" type="com.autosite.struts.form.BlogMainForm" />
+		<form-bean name="blogConfigForm" type="com.autosite.struts.form.BlogConfigForm" />
+		<form-bean name="blogCategoryForm" type="com.autosite.struts.form.BlogCategoryForm" />
+		<form-bean name="blogPostForm" type="com.autosite.struts.form.BlogPostForm" />
+		<form-bean name="blogCommentForm" type="com.autosite.struts.form.BlogCommentForm" />
+
+		<form-bean name="contentCategoryForm"
+			type="com.autosite.struts.form.ContentCategoryForm" />
+
+		<form-bean name="siteFeatureConfigForm"
+			type="com.autosite.struts.form.SiteFeatureConfigForm" />
+
+		<form-bean name="pollForm" type="com.autosite.struts.form.PollForm" />
+		<form-bean name="pollConfigForm" type="com.autosite.struts.form.PollConfigForm" />
+		<form-bean name="pollVoteForm" type="com.autosite.struts.form.PollVoteForm" />
+		<form-bean name="pollCommentForm" type="com.autosite.struts.form.PollCommentForm" />
+		<form-bean name="pollStyleForm" type="com.autosite.struts.form.PollStyleForm" />
+
+
+		<form-bean name="sweepWorldcupForm" type="com.autosite.struts.form.SweepWorldcupForm" />
+		<form-bean name="sweepRegisterForm" type="com.autosite.struts.form.SweepRegisterForm" />
+		<form-bean name="sweepPasswordForm" type="com.autosite.struts.form.SweepPasswordForm" />
+		<form-bean name="sweepInvitationForm"
+			type="com.autosite.struts.form.SweepInvitationForm" />
+
+
+		<form-bean name="contentFeedConfigForm"
+			type="com.autosite.struts.form.ContentFeedConfigForm" />
+		<form-bean name="contentFeedRelForm"
+			type="com.autosite.struts.form.ContentFeedRelForm" />
+		<form-bean name="contentFeedSiteForm"
+			type="com.autosite.struts.form.ContentFeedSiteForm" />
+
+
+		<form-bean name="genTableForm" type="com.autosite.struts.form.GenTableForm" />
+		<form-bean name="genFormFlowForm" type="com.autosite.struts.form.GenFormFlowForm" />
+		<form-bean name="genSimpleForm" type="com.autosite.struts.form.GenSimpleForm" />
+
+		<form-bean name="genFlowStartForm" type="com.autosite.struts.form.GenFlowStartForm" />
+    <form-bean name="genFlowMidForm" type="com.autosite.struts.form.GenFlowMidForm" />
+    <form-bean name="genFlowFinalForm" type="com.autosite.struts.form.GenFlowFinalForm" />
+    <form-bean name="genFlowConfirmForm" type="com.autosite.struts.form.GenFlowConfirmForm" />
+		
+		<form-bean name="testWrapForm" type="com.autosite.struts.form.TestWrapForm" />
+		<form-bean name="testFacadeForm" type="com.autosite.struts.form.TestFacadeForm" />
+		<form-bean name="testCoreForm" type="com.autosite.struts.form.TestCoreForm" />
+
+	    <form-bean name="userManageForm" type="com.autosite.struts.form.UserManageForm" />
+
+
+
+		<!-- ================================== CHURCH =================================================== -->
+		<form-bean name="churMemberForm" type="com.autosite.struts.form.ChurMemberForm" />
+		<form-bean name="churIncomeForm" type="com.autosite.struts.form.ChurIncomeForm" />
+		<form-bean name="churIncomeTypeForm"
+			type="com.autosite.struts.form.ChurIncomeTypeForm" />
+		<form-bean name="churIncomeCategoryForm"
+			type="com.autosite.struts.form.ChurIncomeCategoryForm" />
+		<form-bean name="churIncomeItemForm"
+			type="com.autosite.struts.form.ChurIncomeItemForm" />
+		<form-bean name="churExpenseItemForm"
+			type="com.autosite.struts.form.ChurExpenseItemForm" />
+		<form-bean name="churExpenseCategoryForm"
+			type="com.autosite.struts.form.ChurExpenseCategoryForm" />
+		<form-bean name="churExpenseForm" type="com.autosite.struts.form.ChurExpenseForm" />
+		<form-bean name="churIncomeAddForm" type="com.autosite.struts.form.ChurIncomeAddForm" />
+		<form-bean name="churPayeeForm" type="com.autosite.struts.form.ChurPayeeForm" />
+
+		<!-- ================================== CLEANER =================================================== -->
+
+	    <form-bean name="cleanerRegisterStartForm" type="com.autosite.struts.form.CleanerRegisterStartForm" />
+
+	    <form-bean name="cleanerCustomerForm" type="com.autosite.struts.form.CleanerCustomerForm" />
+	    <form-bean name="cleanerTicketForm" type="com.autosite.struts.form.CleanerTicketForm" />
+
+	    <form-bean name="cleanerPickupDeliveryRecurForm" type="com.autosite.struts.form.CleanerPickupDeliveryRecurForm" />
+	    <form-bean name="cleanerPickupDeliveryForm" type="com.autosite.struts.form.CleanerPickupDeliveryForm" />
+
+	    <form-bean name="autositeUserForm" type="com.autosite.struts.form.AutositeUserForm" />
+
+
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+
+		<!-- ################################################################################################### -->
+
+		<action path="/**" scope="request"
+			type="com.autosite.struts.act.DynamicMenuAction4">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<!-- ################################################################################################### -->
+		<action path="/t_*" scope="request"
+			type="com.autosite.struts.action.AutositeViewAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/v_*" scope="request"
+			type="com.autosite.struts.action.core.AutositeViewDirectAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<!-- ** OLD ONE. now using the above ** action path="/v_*" scope="request"
+			type="com.autosite.struts.action.AutositeLoginViewAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action-->
+
+		<action path="/m_*" scope="request"
+			type="com.autosite.struts.act.DynamicMenuAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<!-- ################################################################################################### -->
+
+		<action path="/appconfig" scope="request"
+			type="com.autosite.struts.action.AutositeConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+			<forward name="printer" path="/jsp/layout/printerout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/moveTo" scope="request"
+			type="com.autosite.struts.act.MoveToAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/fowardTo" scope="request"
+			type="com.autosite.struts.act.ForwardToAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/setTo" scope="request"
+			type="com.autosite.struts.act.SessionSetAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/mv" scope="request" type="com.autosite.struts.act.MoveToAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/confirmTo" scope="request"
+			type="com.autosite.struts.act.ConfirmToAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/linkTo" scope="request"
+			type="com.autosite.struts.action.LinkToDestAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/partitionTo" scope="request"
+			type="com.autosite.struts.act.GetPartitionAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<!-- ################################################################################################### -->
+		<action path="/home" scope="request"
+			type="com.autosite.struts.action.HomeAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<!-- ################################################################################################### -->
+
+		<action attribute="loginForm" input="/jsp/statics/login.jsp"
+			name="loginForm" path="/loginFormSubmit" scope="request"
+			type="com.autosite.struts.action.AutositeLoginAction">
+			<forward name="default" path="/jsp/layout/layout.jsp" />
+		</action>
+		<action path="/logout" scope="request"
+			type="com.autosite.struts.action.AutositeLogoutAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="addContentForm" input="/form/addContent.jsp"
+			name="addContentForm" path="/addContent" scope="request"
+			type="com.autosite.struts.action.AddContentAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/deleteContent" type="com.autosite.struts.action.DeleteContentAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="addPageForm" input="/jsp/form/addPage.jsp"
+			name="addPageForm" path="/addPage" scope="request"
+			type="com.autosite.struts.action.AddPageAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="addDynContentForm" input="/jsp/form/addDynContent.jsp"
+			name="addDynContentForm" path="/addDynContent" scope="request"
+			type="com.autosite.struts.action.AddDynContentAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/deleteDynContent"
+			type="com.autosite.struts.action.DeleteDynContentAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/updatePage" type="com.autosite.struts.action.UpdatePageAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="siteConfigForm" input="/jsp/form/siteConfig.jsp"
+			name="siteConfigForm" path="/siteConfig" scope="request"
+			type="com.autosite.struts.action.SiteConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="siteHeaderForm" input="/jsp/forum/siteHeader.jsp"
+			name="siteHeaderForm" path="/siteHeaderAction" scope="request"
+			type="com.autosite.struts.action.SiteHeaderAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/addSitePost" type="com.autosite.struts.action.AddSitePostAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/deleteSitePost" type="com.autosite.struts.action.DeleteSitePostAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/donotuse" type="com.autosite.struts.act.DonotuseAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		
+		<action path="/pagelessSession" type="com.autosite.struts.act.PagelessSessionManagerAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/pagelessSynch" type="com.autosite.struts.act.PagelessSessionSynchTrackingAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		
+		<action attribute="contentAdForm" input="/jsp/forum/contentAd.jsp"
+			name="contentAdForm" path="/contentAdAction" scope="request"
+			type="com.autosite.struts.action.ContentAdAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="fileupForm" input="/jsp/form/fileup.jsp"
+			name="fileupForm" path="/fileup" scope="request"
+			type="com.autosite.struts.action.FileupAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="velocityMainForm" input="/jsp/form/velocityMain.jsp"
+			name="velocityMainForm" path="/velocityMainAction" scope="request"
+			type="com.autosite.struts.action.VelocityMainAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="forumCategoryForm" input="/jsp/forum/forumCategory.jsp"
+			name="forumCategoryForm" path="/forumCategoryAction" scope="request"
+			type="com.autosite.struts.action.ForumCategoryAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="forumSectionForm" input="/jsp/forum/forumSection.jsp"
+			name="forumSectionForm" path="/forumSectionAction" scope="request"
+			type="com.autosite.struts.action.ForumSectionAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="forumSubjectForm" input="/jsp/forum/forumSubject.jsp"
+			name="forumSubjectForm" path="/forumSubjectAction" scope="request"
+			type="com.autosite.struts.action.ForumSubjectAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="forumPostForm" input="/jsp/forum/forumPost.jsp"
+			name="forumPostForm" path="/forumPostAction" scope="request"
+			type="com.autosite.struts.action.ForumPostAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="panelForm" input="/jsp/forum/panel.jsp"
+			name="panelForm" path="/panelAction" scope="request"
+			type="com.autosite.struts.action.PanelAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="styleConfigForm" input="/jsp/forum/styleConfig.jsp"
+			name="styleConfigForm" path="/styleConfigAction" scope="request"
+			type="com.autosite.struts.action.StyleConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="panelStyleForm" input="/jsp/forum/panelStyle.jsp"
+			name="panelStyleForm" path="/panelStyleAction" scope="request"
+			type="com.autosite.struts.action.PanelStyleAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="linkStyleConfigForm" input="/jsp/forum/linkStyleConfig.jsp"
+			name="linkStyleConfigForm" path="/linkStyleConfigAction" scope="request"
+			type="com.autosite.struts.action.LinkStyleConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="panelLinkStyleForm" input="/jsp/forum/panelLinkStyle.jsp"
+			name="panelLinkStyleForm" path="/panelLinkStyleAction" scope="request"
+			type="com.autosite.struts.action.PanelLinkStyleAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="resourceListForm" input="/jsp/forum/resourceList.jsp"
+			name="resourceListForm" path="/resourceListAction" scope="request"
+			type="com.autosite.struts.action.ResourceListAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="genMainForm" input="/jsp/forum/genMain.jsp"
+			name="genMainForm" path="/genMainAction" scope="request"
+			type="com.autosite.struts.action.GenMainAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="genMainCompMapForm" input="/jsp/forum/genMainCompMap.jsp"
+			name="genMainCompMapForm" path="/genMainCompMapAction" scope="request"
+			type="com.autosite.struts.action.GenMainCompMapAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="genCompForm" input="/jsp/forum/genComp.jsp"
+			name="genCompForm" path="/genCompAction" scope="request"
+			type="com.autosite.struts.action.GenCompAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="genSubForm" input="/jsp/forum/genSub.jsp"
+			name="genSubForm" path="/genSubAction" scope="request"
+			type="com.autosite.struts.action.GenSubAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="genExtraForm" input="/jsp/forum/genExtra.jsp"
+			name="genExtraForm" path="/genExtraAction" scope="request"
+			type="com.autosite.struts.action.GenExtraAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/generalStylesConfig" scope="request"
+			type="com.autosite.struts.action.GeneralStylesConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="panelPageConfigForm" input="/jsp/forum/panelPageConfig.jsp"
+			name="panelPageConfigForm" path="/panelPageConfigAction" scope="request"
+			type="com.autosite.struts.action.PanelPageConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<!-- action attribute="registerSimpleForm" input="/jsp/forum/registerSimple.jsp"
+			name="registerSimpleForm" path="/registerSimpleAction" scope="request"
+			type="com.autosite.struts.action.RegisterSimpleAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action-->
+
+	    <action	attribute="autositeUserForm" input="/jsp/form/userAutositeHome.jsp" name="autositeUserForm" path="/autositeUserAction"  scope="request" type="com.autosite.struts.action.AutositeUserAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+		
+	    <action	attribute="registerSimpleForm" input="/jsp/forum/registerSimple.jsp" name="registerSimpleForm" path="/registerSimpleAction"  scope="request" type="com.autosite.struts.action.RegisterSimpleAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+
+		<action attribute="pageConfigForm" input="/jsp/forum/pageConfig.jsp"
+			name="pageConfigForm" path="/pageConfigAction" scope="request"
+			type="com.autosite.struts.action.PageConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="emailSubsForm" input="/jsp/forum/emailSubs.jsp"
+			name="emailSubsForm" path="/emailSubsAction" scope="request"
+			type="com.autosite.struts.action.EmailSubsAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="ecProductForm" input="/jsp/forum/ecProduct.jsp"
+			name="ecProductForm" path="/ecProductAction" scope="request"
+			type="com.autosite.struts.action.EcProductAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+
+		<action attribute="ecCategoryForm" input="/jsp/forum/ecCategory.jsp"
+			name="ecCategoryForm" path="/ecCategoryAction" scope="request"
+			type="com.autosite.struts.action.EcCategoryAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="ecDisplayConfigForm" input="/jsp/forum/ecDisplayConfig.jsp"
+			name="ecDisplayConfigForm" path="/ecDisplayConfigAction" scope="request"
+			type="com.autosite.struts.action.EcDisplayConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/ecCartSubmitAction" scope="request"
+			type="com.autosite.struts.action.EcCartSubmitAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="ecWishListForm" input="/jsp/forum/ecWishList.jsp"
+			name="ecWishListForm" path="/ecWishListAction" scope="request"
+			type="com.autosite.struts.action.EcWishListAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="ecUserProductReviewForm" input="/jsp/forum/ecUserProductReview.jsp"
+			name="ecUserProductReviewForm" path="/ecUserProductReviewAction"
+			scope="request" type="com.autosite.struts.action.EcUserProductReviewAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="ecPageProductRelForm" input="/jsp/forum/ecPageProductRel.jsp"
+			name="ecPageProductRelForm" path="/ecPageProductRelAction" scope="request"
+			type="com.autosite.struts.action.EcPageProductRelAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pageStaticAltForm" input="/jsp/forum/pageStaticAlt.jsp"
+			name="pageStaticAltForm" path="/pageStaticAltAction" scope="request"
+			type="com.autosite.struts.action.PageStaticAltAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pageStaticConfigForm" input="/jsp/forum/pageStaticConfig.jsp"
+			name="pageStaticConfigForm" path="/pageStaticConfigAction" scope="request"
+			type="com.autosite.struts.action.PageStaticConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="ecCheckoutAccountInfoForm" input="/jsp/forum/ecCheckoutAccountInfo.jsp"
+			name="ecCheckoutAccountInfoForm" path="/ecCheckoutAccountInfoAction"
+			scope="request" type="com.autosite.struts.action.EcCheckoutAccountInfoAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="ecCheckoutPaymentWithoutRegisterForm"
+			input="/jsp/forum/ecCheckoutPaymentWithoutRegister.jsp" name="ecCheckoutPaymentWithoutRegisterForm"
+			path="/ecCheckoutPaymentWithoutRegisterAction" scope="request"
+			type="com.autosite.struts.action.EcCheckoutPaymentWithoutRegisterAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/ecCheckoutConfirmOrderWithoutRegisterAction"
+			scope="request"
+			type="com.autosite.struts.action.EcCheckoutConfirmOrderWithoutRegisterAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="siteRegStartForm" input="/jsp/forum/siteRegStart.jsp"
+			name="siteRegStartForm" path="/siteRegStartAction" scope="request"
+			type="com.autosite.struts.action.SiteRegStartAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="siteRegAccountServiceInfoForm" input="/jsp/forum/siteRegAccountServiceInfo.jsp"
+			name="siteRegAccountServiceInfoForm" path="/siteRegAccountServiceInfoAction"
+			scope="request" type="com.autosite.struts.action.SiteRegAccountServiceInfoAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="siteRegPaymentInfoForm" input="/jsp/forum/siteRegPaymentInfo.jsp"
+			name="siteRegPaymentInfoForm" path="/siteRegPaymentInfoAction" scope="request"
+			type="com.autosite.struts.action.SiteRegPaymentInfoAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="siteRegConfirmForm" input="/jsp/forum/siteRegConfirm.jsp"
+			name="siteRegConfirmForm" path="/siteRegConfirmAction" scope="request"
+			type="com.autosite.struts.action.SiteRegConfirmAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="siteForm" input="/jsp/forum/site.jsp" name="siteForm"
+			path="/siteAction" scope="request" type="com.autosite.struts.action.SiteAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pageForm" input="/jsp/forum/page.jsp" name="pageForm"
+			path="/pageAction" scope="request" type="com.autosite.struts.action.PageAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="blogMainForm" input="/jsp/forum/blogMain.jsp"
+			name="blogMainForm" path="/blogMainAction" scope="request"
+			type="com.autosite.struts.action.BlogMainAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="blogConfigForm" input="/jsp/forum/blogConfig.jsp"
+			name="blogConfigForm" path="/blogConfigAction" scope="request"
+			type="com.autosite.struts.action.BlogConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="blogCategoryForm" input="/jsp/forum/blogCategory.jsp"
+			name="blogCategoryForm" path="/blogCategoryAction" scope="request"
+			type="com.autosite.struts.action.BlogCategoryAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="blogPostForm" input="/jsp/forum/blogPost.jsp"
+			name="blogPostForm" path="/blogPostAction" scope="request"
+			type="com.autosite.struts.action.BlogPostAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="blogCommentForm" input="/jsp/forum/blogComment.jsp"
+			name="blogCommentForm" path="/blogCommentAction" scope="request"
+			type="com.autosite.struts.action.BlogCommentAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="contentCategoryForm" input="/jsp/forum/contentCategory.jsp"
+			name="contentCategoryForm" path="/contentCategoryAction" scope="request"
+			type="com.autosite.struts.action.ContentCategoryAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="siteFeatureConfigForm" input="/jsp/forum/siteFeatureConfig.jsp"
+			name="siteFeatureConfigForm" path="/siteFeatureConfigAction" scope="request"
+			type="com.autosite.struts.action.SiteFeatureConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pollForm" input="/jsp/forum/poll.jsp" name="pollForm"
+			path="/pollAction" scope="request" type="com.autosite.struts.action.PollAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pollForm" input="/jsp/forum/pollCreate.jsp"
+			name="pollForm" path="/pollCreateAction" scope="request"
+			type="com.autosite.struts.action.PollCreateAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pollConfigForm" input="/jsp/forum/pollConfig.jsp"
+			name="pollConfigForm" path="/pollConfigAction" scope="request"
+			type="com.autosite.struts.action.PollConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pollVoteForm" input="/jsp/forum/pollVote.jsp"
+			name="pollVoteForm" path="/pollVoteAction" scope="request"
+			type="com.autosite.struts.action.PollVoteAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pollCommentForm" input="/jsp/forum/pollComment.jsp"
+			name="pollCommentForm" path="/pollCommentAction" scope="request"
+			type="com.autosite.struts.action.PollCommentAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pollStyleForm" input="/jsp/forum/pollStyle.jsp"
+			name="pollStyleForm" path="/pollStyleAction" scope="request"
+			type="com.autosite.struts.action.PollStyleAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+
+		<action attribute="sweepWorldcupForm" input="/jsp/forum/sweepWorldcup.jsp"
+			name="sweepWorldcupForm" path="/sweepWorldcupAction" scope="request"
+			type="com.autosite.struts.action.SweepWorldcupAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="sweepRegisterForm" input="/jsp/forum/sweepRegister.jsp"
+			name="sweepRegisterForm" path="/sweepRegisterAction" scope="request"
+			type="com.autosite.struts.action.SweepRegisterAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="sweepPasswordForm" input="/jsp/forum/sweepPassword.jsp"
+			name="sweepPasswordForm" path="/sweepPasswordAction" scope="request"
+			type="com.autosite.struts.action.SweepPasswordAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="sweepInvitationForm" input="/jsp/forum/sweepInvitation.jsp"
+			name="sweepInvitationForm" path="/sweepInvitationAction" scope="request"
+			type="com.autosite.struts.action.SweepInvitationAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="contentFeedSiteForm" input="/jsp/forum/contentFeedSite.jsp"
+			name="contentFeedSiteForm" path="/contentFeedSiteAction" scope="request"
+			type="com.autosite.struts.action.ContentFeedSiteAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="contentFeedRelForm" input="/jsp/forum/contentFeedRel.jsp"
+			name="contentFeedRelForm" path="/contentFeedRelAction" scope="request"
+			type="com.autosite.struts.action.ContentFeedRelAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="contentFeedConfigForm" input="/jsp/forum/contentFeedConfig.jsp"
+			name="contentFeedConfigForm" path="/contentFeedConfigAction" scope="request"
+			type="com.autosite.struts.action.ContentFeedConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="linktoForm" input="/jsp/forum/linkto.jsp"
+			name="linktoForm" path="/linktoAction" scope="request"
+			type="com.autosite.struts.action.LinktoAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="styleSetForm" input="/jsp/forum/styleSet.jsp"
+			name="styleSetForm" path="/styleSetAction" scope="request"
+			type="com.autosite.struts.action.StyleSetAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="styleSetContentForm" input="/jsp/forum/styleSetContent.jsp"
+			name="styleSetContentForm" path="/styleSetContentAction" scope="request"
+			type="com.autosite.struts.action.StyleSetContentAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="metaHeaderForm" input="/jsp/forum/metaHeader.jsp"
+			name="metaHeaderForm" path="/metaHeaderAction" scope="request"
+			type="com.autosite.struts.action.MetaHeaderAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="siteSuggestForm" input="/jsp/forum/siteSuggest.jsp"
+			name="siteSuggestForm" path="/siteSuggestAction" scope="request"
+			type="com.autosite.struts.action.SiteSuggestAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="devNoteForm" input="/jsp/forum/devNote.jsp"
+			name="devNoteForm" path="/devNoteAction" scope="request"
+			type="com.autosite.struts.action.DevNoteAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="testDataDepotForm" input="/jsp/forum/testDataDepot.jsp"
+			name="testDataDepotForm" path="/testDataDepotAction" scope="request"
+			type="com.autosite.struts.action.TestDataDepotAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="whoisDataForm" input="/jsp/forum/whoisData.jsp"
+			name="whoisDataForm" path="/whoisDataAction" scope="request"
+			type="com.autosite.struts.action.WhoisDataAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="menuItemForm" input="/jsp/forum/menuItem.jsp"
+			name="menuItemForm" path="/menuItemAction" scope="request"
+			type="com.autosite.struts.action.MenuItemAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/panelMenuReorder" scope="request"
+			type="com.autosite.struts.action.PanelMenuReorderAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="styleThemeForm" input="/jsp/forum/styleTheme.jsp"
+			name="styleThemeForm" path="/styleThemeAction" scope="request"
+			type="com.autosite.struts.action.StyleThemeAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		
+	    <action	attribute="themeAggregatorForm" input="/jsp/forum/${form_outFile}" name="themeAggregatorForm" path="/themeAggregatorAction"  scope="request" 
+	    	type="com.autosite.struts.action.ThemeAggregatorAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+
+	    <action	attribute="themeStylesForm" input="/jsp/forum/${form_outFile}" name="themeStylesForm" path="/themeStylesAction"  scope="request" 
+	    	type="com.autosite.struts.action.ThemeStylesAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+		
+
+		<action attribute="siteConfigStyleForm" input="/jsp/forum/siteConfigStyle.jsp"
+			name="siteConfigStyleForm" path="/siteConfigStyleAction" scope="request"
+			type="com.autosite.struts.action.SiteConfigStyleAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="devTableForm" input="/jsp/forum/devTable.jsp"
+			name="devTableForm" path="/devTableAction" scope="request"
+			type="com.autosite.struts.action.DevTableAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="pageContentConfigForm" input="/jsp/forum/pageContentConfig.jsp"
+			name="pageContentConfigForm" path="/pageContentConfigAction" scope="request"
+			type="com.autosite.struts.action.PageContentConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="contentConfigForm" input="/jsp/forum/contentConfig.jsp"
+			name="contentConfigForm" path="/contentConfigAction" scope="request"
+			type="com.autosite.struts.action.ContentConfigAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="blockListForm" input="/jsp/forum/blockList.jsp"
+			name="blockListForm" path="/blockListAction" scope="request"
+			type="com.autosite.struts.action.BlockListAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		
+    <action	attribute="resourceInclusionForm" input="/jsp/forum/resourceInclusion.jsp" name="resourceInclusionForm" path="/resourceInclusionAction"  scope="request" type="com.autosite.struts.action.ResourceInclusionAjaxAction">
+      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+
+		<action attribute="genTableForm" input="/jsp/forum/genTable.jsp"
+			name="genTableForm" path="/genTableAction" scope="request"
+			type="com.autosite.struts.action.GenTableAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="genFormFlowForm" input="/jsp/forum/genFormFlow.jsp"
+			name="genFormFlowForm" path="/genFormFlowAction" scope="request"
+			type="com.autosite.struts.action.GenFormFlowAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="genSimpleForm" input="/jsp/forum/genSimple.jsp"
+			name="genSimpleForm" path="/genSimpleAction" scope="request"
+			type="com.autosite.struts.action.GenSimpleAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action	attribute="genFlowStartForm" input="/jsp/forum/${form_outFile}" name="genFlowStartForm" path="/genFlowStartAction"  scope="request" type="com.autosite.struts.action.GenFlowStartAjaxAction">
+      		<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    	</action>
+
+    <action	attribute="genFlowMidForm" input="/jsp/forum/${form_outFile}" name="genFlowMidForm" path="/genFlowMidAction"  scope="request" type="com.autosite.struts.action.GenFlowMidAjaxAction">
+      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+
+    <action	attribute="genFlowFinalForm" input="/jsp/forum/${form_outFile}" name="genFlowFinalForm" path="/genFlowFinalAction"  scope="request" type="com.autosite.struts.action.GenFlowFinalAjaxAction">
+      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+
+    <action	attribute="genFlowConfirmForm" input="/jsp/forum/${form_outFile}" name="genFlowConfirmForm" path="/genFlowConfirmAction"  scope="request" type="com.autosite.struts.action.GenFlowConfirmAjaxAction">
+      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+		
+		<action attribute="testWrapForm" input="/jsp/forum/testWrap.jsp"
+			name="testWrapForm" path="/testWrapAction" scope="request"
+			type="com.autosite.struts.action.TestWrapAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="testFacadeForm" input="/jsp/forum/testFacade.jsp"
+			name="testFacadeForm" path="/testFacadeAction" scope="request"
+			type="com.autosite.struts.action.TestFacadeAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="testCoreForm" input="/jsp/forum/testCore.jsp"
+			name="testCoreForm" path="/testCoreAction" scope="request"
+			type="com.autosite.struts.action.TestCoreAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<!-- ================================== CHURCH =================================================== -->
+		<action attribute="churMemberForm" input="/jsp/forum/churMember.jsp"
+			name="churMemberForm" path="/churMemberAction" scope="request"
+			type="com.autosite.struts.action.ChurMemberAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="churIncomeTypeForm" input="/jsp/forum/churIncomeType.jsp"
+			name="churIncomeTypeForm" path="/churIncomeTypeAction" scope="request"
+			type="com.autosite.struts.action.ChurIncomeTypeAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="churIncomeForm" input="/jsp/forum/churIncome.jsp"
+			name="churIncomeForm" path="/churIncomeAction" scope="request"
+			type="com.autosite.struts.action.ChurIncomeAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="churIncomeItemForm" input="/jsp/forum/churIncomeItem.jsp"
+			name="churIncomeItemForm" path="/churIncomeItemAction" scope="request"
+			type="com.autosite.struts.action.ChurIncomeItemAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<action attribute="churIncomeCategoryForm" input="/jsp/forum/churIncomeCategory.jsp"
+			name="churIncomeCategoryForm" path="/churIncomeCategoryAction" scope="request"
+			type="com.autosite.struts.action.ChurIncomeCategoryAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="churExpenseCategoryForm" input="/jsp/forum/churExpenseCategory.jsp"
+			name="churExpenseCategoryForm" path="/churExpenseCategoryAction"
+			scope="request" type="com.autosite.struts.action.ChurExpenseCategoryAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="churExpenseItemForm" input="/jsp/forum/churExpenseItem.jsp"
+			name="churExpenseItemForm" path="/churExpenseItemAction" scope="request"
+			type="com.autosite.struts.action.ChurExpenseItemAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="churExpenseForm" input="/jsp/forum/churExpense.jsp"
+			name="churExpenseForm" path="/churExpenseAction" scope="request"
+			type="com.autosite.struts.action.ChurExpenseAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="churIncomeAddForm" input="/jsp/forum/churIncomeAdd.jsp"
+			name="churIncomeAddForm" path="/churIncomeAddAction" scope="request"
+			type="com.autosite.struts.action.ChurIncomeAddAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action attribute="churPayeeForm" input="/jsp/forum/churPayee.jsp"
+			name="churPayeeForm" path="/churPayeeAction" scope="request"
+			type="com.autosite.struts.action.ChurPayeeAjaxAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+		<!-- ================================== CLEANER =================================================== -->
+	    <action	attribute="cleanerRegisterStartForm" input="/jsp/forum/${form_outFile}" name="cleanerRegisterStartForm" path="/cleanerRegisterStartAction"  scope="request" 
+	    	type="com.autosite.struts.action.CleanerRegisterStartAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+
+	    <action	attribute="cleanerTicketForm" input="/jsp/forum/${form_outFile}" name="cleanerTicketForm" path="/cleanerTicketAction"  scope="request" 
+	    	type="com.autosite.struts.action.CleanerTicketAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+
+	    <action	attribute="cleanerCustomerForm" input="/jsp/forum/${form_outFile}" name="cleanerCustomerForm" path="/cleanerCustomerAction"  scope="request" 
+	    	type="com.autosite.struts.action.CleanerCustomerAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+
+	    <action	attribute="cleanerPickupDeliveryForm" input="/jsp/forum/${form_outFile}" name="cleanerPickupDeliveryForm" path="/cleanerPickupDeliveryAction"  scope="request" 
+	    	type="com.autosite.struts.action.CleanerPickupDeliveryAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+
+	    <action	attribute="cleanerPickupDeliveryRecurForm" input="/jsp/forum/${form_outFile}" name="cleanerPickupDeliveryRecurForm" path="/cleanerPickupDeliveryRecurAction"  scope="request" 
+	    	type="com.autosite.struts.action.CleanerPickupDeliveryRecurAjaxAction">
+	      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+	    </action>
+
+    <action	attribute="userManageForm" input="/jsp/forum/userManage.jsp" name="userManageForm" path="/userManageAction"  scope="request" type="com.autosite.struts.action.UserManageAjaxAction">
+      	<forward name="default" path="/jsp/layout/layout.jsp" contextRelative="true" />
+    </action>
+
+		<!-- ================================== WILD =================================================== -->
+
+		<action path="/*/*" scope="request"
+			type="com.autosite.struts.act.DynamicTwoPartsAction">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+		<action path="/a/*" scope="request"
+			type="com.autosite.struts.act.AutositeActionRouter">
+			<forward name="default" path="/jsp/layout/layout.jsp"
+				contextRelative="true" />
+		</action>
+
+
+
+	</action-mappings>
+
+
+	<message-resources parameter="com.surveygen.struts.ApplicationResources" />
+</struts-config>
+

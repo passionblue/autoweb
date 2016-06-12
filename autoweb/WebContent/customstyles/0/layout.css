@@ -1,0 +1,610 @@
+/*div#wrapper {
+	margin-top: 0px;
+	margin-left: auto; margin-right: auto;
+	position: absolute;
+	top:30px;
+	left:100px;
+}
+*/
+
+div .wrapper {
+	background-color: transparent;
+}
+
+div .divider {
+	width: 100%;
+	height: 1px;
+	border: 0px;
+	background-color: transparent; 	
+}
+
+div .vertical-divider {
+	width: 5x;
+	height: 10px;
+	border: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: transparent; 	
+	float: left;
+}
+
+/******************************************************************************************/
+/***************** Panel Internal Menu **************************/
+/******************************************************************************************/
+
+div.panel-menu {
+	display:block;
+	margin: 0px 0px 0px 0px;
+	background-color: #A7B7FB; 	
+	border:0px solid white;	
+	font: normal normal normal 10px tahoma;
+	float: none;
+}
+div.panel-menu a{
+	color: black;
+	font-weight: bold;
+}
+div.panel-menu a:hover{
+	color: white;
+	font-weight: bold;
+	text-decoration: none;	
+}
+
+div.panel-menu-hidden {
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	background-color: #eeeeee; 	
+	border:0px solid red;
+	font: normal normal normal 9px tahoma;
+	float: none;
+}
+
+div.panel-menu-hidden a{
+	color: black;
+	font-weight: bold;
+}
+div.panel-menu-hidden a:hover{
+	color: #606060;
+	font-weight: bold;
+	text-decoration: none;	
+}
+
+/*****************************************************************************************
+div#panel div#panel-content {
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	background-color: transparent; 	
+	border:0px solid blue;	
+}
+*/
+/******************************************************************************************/
+/***************** Top Frame ( placed vertop that span 100% of screen *********************/
+/******************************************************************************************/
+
+div.top-frame{
+	width: 100%;
+	margin: 0 0 0 0; 
+	border:0px solid blue;	
+}
+
+div.top-frame div.panel{
+	width: 100%;
+	margin: 0 0 0 0; 
+	border:0px solid #0A6C4A;
+	background-color: green;	
+			
+}
+
+div.top-frame div.paneldefaultcontentlinks{
+	width: 100%;
+	margin: 0 0 0 0; 
+	border:0px solid #0A6C4A;
+	background-color: green;	
+			
+}
+
+/******************************************************************************************/
+/***************** HEADER WRAPPER *********************************************************/
+/******************************************************************************************/
+div.header-wrapper{
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	
+}
+
+div.header-wrapper div.header {
+	width: 100%;
+	margin: 0 auto; 
+	border:0px solid yellow;
+}
+
+div.header-wrapper div.panel{
+	/* width: 100%; */
+	margin: 0px 0px 0px 0px; 
+	border:10px solid #0A6C4A;
+	background-color: green;	
+}
+
+/*-----------------------------*/
+
+div.header-menu{
+	border:10px solid #0A6C4A;
+}
+
+div.header-menu ul.nav-list {
+	list-style-type: none;
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px; 
+	/*background: pink url(http://www.oxo5.com/images/header4.jpg) no-repeat 0px 0px;*/
+	border: 0px solid red;
+	display:list-item;
+	background-color: transparent;	
+}
+
+div.header-menu ul.nav-list li.nav-item {
+	width: 150px;
+	margin: 0px 0px 0px 0px;
+	font: normal normal bold 14px tahoma;
+	float: left;
+}
+
+div.header-menu ul.nav-list li.nav-item a {
+	display: block;
+	height: 20px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	padding: 5px 5px 5px 5px;
+}
+
+div.header-menu ul.nav-list li.nav-item a:hover,
+div.header-menu ul.nav-list li.nav-item a:active,
+div.header-menu ul.nav-list li.nav-item a.active {
+	display: block;
+	height: 20px;
+	color: #495135;
+	background-color: transparent; /* #e1e9d9; */
+	text-decoration: none;
+	padding: 5px 5px 5px 5px;
+	outline: none;
+	border-top: 5px solid orange;
+	border-bottom: 5px solid orange;
+}
+
+/******************************************************************************************/
+/***************** Content WRAPPER *****************/
+/******************************************************************************************/
+div.content-wrapper {
+	width: 100%;
+	float: none;
+	background-color: transparent;	
+}
+
+/******************************************************************************************/
+/***************** MENU-SECTION *****************/
+/******************************************************************************************/
+div.menu-section-frame{
+	margin: 0 0 0 0; 
+	border:0 solid black;
+	float: left;
+	background-color: #efffff;
+	
+}
+
+div.menu-section{
+	margin: 0 10 0 10; 
+	border:0px solid black;
+	padding: 0px 10px 0px 10px;
+	border: 15px solid black;
+}
+
+/*
+container is important to have width so that panel below would have padding or margin set withouth being pushed 
+out of the location, because it doesnt bear any size 
+*/
+div.menu-section div.panel-container{
+	width: 100%;
+}
+
+div.menu-section div.panel{
+	/* width: 100%; */
+	margin: 0 0 0 0; 
+	background-color: pink;
+	border: 0px solid blue;
+	padding: 5px 0px 5px 0px;	
+}
+
+div.menu-section div.side-menu{
+
+}
+
+div.menu-section div.side-menu ul.nav-list{
+	width: 100%;
+	list-style-type: none;
+	text-align: left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background-color: transparent;
+}
+
+div.menu-section div.side-menu ul.nav-list li.nav-item{
+	margin: 0px 0px 5px 0px;
+	padding: 0px 0px 0px 0px;
+	font: normal normal bold 12px verdana;
+	height: 24px;
+}
+
+div.menu-section div.side-menu ul.nav-list li.nav-item a{
+	height: 20px;
+	display: block;
+	border: 0px dotted blue;
+	margin: auto;
+	padding: 5px 0px 0px 0px;
+	text-align: center;
+	color: #780821;
+}
+
+div.menu-section div.side-menu ul.nav-list li.nav-item a:hover,
+div.menu-section div.side-menu ul.nav-list li.nav-item a:active,
+div.menu-section div.side-menu ul.nav-list li.nav-item a.active{
+	height: 20px;
+	display: block;
+	color: #ffffff;
+	border: 0px solid blue;
+	background-color: #780821;
+	outline: none;
+	text-decoration: none;
+	padding: 5px 0px 0px 0px;
+	margin: auto;
+	text-align: center;
+}
+
+/******************************************************************************************/
+/***************** CONTENT-SECTION *****************/
+/******************************************************************************************/
+
+div.content-section-frame{
+	margin: 0 0 0 0; 
+	border:0 solid black;
+	float: left;
+	background-color: #efffff;
+}
+
+div.content-section{
+	border:0px solid orange;
+	margin: 0 0 0 0; 
+	background-color: transparent;	
+}
+/*
+container is important to have width so that panel below would have padding or margin set withouth being pushed 
+out of the location, because it doesnt bear any size 
+*/
+div.content-section div.panel-container{
+	width: 100%;
+}
+
+
+div.content-section div.panel{
+	margin: 0 0 0 0; 
+	border:0px solid blue;
+	background-color: transparent;	
+}
+
+/* main content is where page is embedded*/
+div.content-section div.main-content{ 
+	width: 100%;  
+	display: block;
+	border:0px solid orange;
+	margin: 0 0 0 0;
+	background-color: transparent;	
+}
+
+div.content-section div.main-content div.panel{
+	width: 100%;
+	margin: 0 0 0 0; 
+	border:0px solid red;
+	background-color: transparent;	
+}
+
+div.main-content img.bordered {
+	display: inline;
+	border: 1px solid grey; 
+	padding: 2px; 
+	margin: 5px;"
+}
+
+div.main-content img.float-left {
+	display: inline;
+	float:left; 
+	border: 1px solid grey; 
+	padding: 2px; 
+	margin: 5px;"
+}
+
+/******************************************************************************************/
+/***************** MID-SECTION *****************/
+/******************************************************************************************/
+
+div.mid-section-frame{
+	margin: 0 0 0 0; 
+	border:0px solid black;
+	float: left;
+}
+
+div.mid-section{
+	border:0px solid yellow;	
+	margin: 0 0 0 0; 
+}
+
+/*
+container is important to have width so that panel below would have padding or margin set withouth being pushed 
+out of the location, because it doesnt bear any size 
+*/
+div.mid-section div.panel-container{
+	width: 100%;
+}
+
+div.mid-section div#paneldefault{
+	/*width: 100%;*/
+	margin: 0 0 0 0; 
+	border:0px solid pink;		
+	background-color: transparent;
+}
+
+/******************************************************************************************/
+/***************** AD-SECTION *************************************************************/
+/******************************************************************************************/
+div.ad-section-frame{
+	margin: 0 0 0 0; 
+	border:0px solid black;
+	float: left;
+	background-color: #efffff ;
+}
+
+div.ad-section{
+	margin: 0 0 0 0; 
+	border:0px solid blue;	
+	padding: 0px 15px 0px 15px;
+}	
+
+/*
+container is important to have width so that panel below would have padding or margin set withouth being pushed 
+out of the location, because it doesnt bear any size 
+*/
+div.ad-section div.panel-container{
+	width: 100%;
+}
+
+div.ad-section div.panel{
+	margin: 0 0 0 0; 
+	border: 10px solid pink;		
+	background-color: transparent;
+}
+
+div.ad-section div.side-menu{
+	border: 10px solid green;		
+}
+
+div.ad-section div.side-menu ul.nav-list{
+	width: 100%;
+	list-style-type: none;
+	text-align: left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background-color: #ffffff;
+}
+
+div.ad-section div.side-menu ul.nav-list li.nav-item{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	font: normal normal bold 12px tahoma;
+}
+
+div.ad-section div.side-menu ul.nav-list li.nav-item a{
+	background: yellow; /*url(/images/down.png) no-repeat 60px 0px;*/
+	border: 0px dotted blue;
+	vertical-align: bottom;
+	display: block;
+	height: 20px;
+}
+
+div.ad-section div.side-menu ul.nav-list li.nav-item a:hover {
+	color: white;
+	background: orange; /*url(/images/down.png) no-repeat 60px 0px;*/
+	height: 20px;
+	outline: none;
+}
+div.ad-section div.side-menu ul.nav-list li.nav-item a:active,
+div.ad-section div.side-menu ul.nav-list li.nav-item a.active{
+	color: red;
+	background: orange; /*url(/images/down.png) no-repeat 60px 0px;*/
+	height: 20px;
+	outline: none;
+}
+
+/******************************************************************************************/
+/***************** FOOTER WRAPPER *****************/
+/******************************************************************************************/
+
+div.footer-wrapper{
+	width: 100%;
+	margin: 0 0 0 0; 
+	border:0px solid blue;	
+}
+
+div.footer-wrapper div.panel{
+	/* width: 100%; */
+	margin: 0 0 0 0; 
+	background-color: green;	
+	border:10px solid #0A6C4A;
+}
+
+div.footer-wrapper div.paneldefaultcontentlinks{
+	width: 100%;
+	margin: 0 0 0 0; 
+	border:0px solid #0A6C4A;
+	background-color: green;	
+}
+
+div.footer {
+	width: 100%;
+	margin: 0 auto; 
+	/*border:1px solid pink; conflicts with facebox footer*/
+}
+div.footer-wrapper div.footer-nav {
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	margin-bottom: 35px;
+	margin: auto; 
+	
+}
+div.footer-wrapper div.footer-menu div.footer-nav-list{
+	width: 300px;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.footer-wrapper div.footer-menu div.footer-menu-list div.footer-nav-item{
+	margin: 0px 10px 0px 10px;
+	font: normal normal bold 10px tahoma;
+	padding-top: 5px;
+	float: left;
+}
+
+div.footer-wrapper div.footer-menu div.footer-menu-list div.footer-nav-item a{
+	display: block;
+	color: grey;
+	border: 0px dotted blue;
+	padding-top: 5px;
+	outline: none;
+	background-color: transparent;
+}
+
+div.footer-menu div.footer-nav-list div.footer-nav-item a:hover,
+div.footer-menu div.footer-nav-list div.footer-nav-item a:active,
+div.footer-menu div.footer-nav-list div.footer-nav-item a.active{
+	display: block;
+	color: #495135;
+	background-color: transparent;
+	text-decoration: none;
+	outline: none;
+}
+
+/* ############################################################################################ */
+/* ############################################################################################ */
+/* ############################################################################################ */
+/** COMMON Component **/
+/* ############################################################################################ */
+/* ############################################################################################ */
+/* ############################################################################################ */
+
+div.panel-free {
+	position: absolute;
+	top:30px;
+	left:-100px;
+	width: 100px;
+	border: 5px solid red;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.clear {clear: both;}
+
+/* ################### categoryChain ######################### */
+
+div.categoryChain {
+	padding: 5px 0px 5px 0px;
+	background-color: white;
+	height: 20px;
+}
+
+div.categoryChainItem {
+	background: white url(menuscripts/mldd/arrow.gif) no-repeat scroll -10px -5px;
+	font: normal normal bold 13px verdana;
+	float: left;
+	margin-left: 0px;
+	padding-left: 15px;
+}
+
+/* ############## CSS based panel ########################### */
+
+div.gapPadding{
+	/* width: 100%; XX */
+	display: block;
+}
+
+/******************************************************************************************/
+/***************** data-content ***********************************************************/
+/******************************************************************************************/
+
+div.panel div.content-panel-frame {
+	padding: 2px;
+	background-color: pink;
+}
+
+div.panel div.content-panel-subject {
+	background-color: blue;
+}
+
+div.panel div.content-panel-data {
+	background-color: yellow;
+}
+
+
+/******************************************************************************************/
+/***************** link-content *****************/
+/******************************************************************************************/
+
+div.content-link a {
+	display: block;
+	border: 0px dotted blue;
+	text-decoration: none;
+	color : #909090;
+	text-align: center;
+	background-color: white;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div.content-link a:hover {
+	display: block;
+	border: 0px solid blue;
+	text-decoration: none; 
+	color : black;
+	background-color: white;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div#link-contentdefaultcontentlinks a {
+	display: block;
+	border: 0px dotted blue;
+	text-decoration: none;
+	color : #909090;
+	text-align: center;
+	background-color: transparent;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+div#link-contentdefaultcontentlinks a:hover {
+	display: block;
+	border: 0px solid blue;
+	text-decoration: none; 
+	color : black;
+	background-color: transparent;
+	margin: 0;
+	padding: 5px 15px 5px 15px;
+	font: normal normal bold 13px verdana;
+}
+
+.panel-title {
+	font: normal normal bold 12px verdana;
+	padding: 5px 0px 5px 5px;
+	text-align: left;
+	background-color: #505050;
+}

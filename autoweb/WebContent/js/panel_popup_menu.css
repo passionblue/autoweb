@@ -1,0 +1,29 @@
+
+p#popMenuContent{
+	position:absolute;
+	border:1px solid #ccc;
+	background:#333;
+	padding:5px;
+	display:none;
+	color:#fff;
+}
+
+div#popMenuContent{
+	position:absolute;
+	border:3px solid #ccc;
+	background:#fff;
+	padding:0px 3px 0px 3px;
+	display:none;
+	color:#333;
+	
+}
+
+div#popClickMenuContent{
+	position:absolute;
+	border:3px solid #ccc;
+	background:#fff;
+	padding:2px 2px 2px 2px;
+	display:none;
+	color:#333;
+	
+}

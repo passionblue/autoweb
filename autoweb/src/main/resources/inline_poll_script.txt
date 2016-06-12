@@ -1,0 +1,159 @@
+
+/*
+// To be used at <script type="text/javascript" src="/blockListAction.html?ajaxRequest=true&ajaxOut=getscriptform"></script>
+
+*/
+
+function sendVoteAndDisappear(pollId, target){
+	var pollAnswer = getPollAnswer('pollVoteForm' + pollId);
+	if (pollAnswer == null) return;
+
+	var params = "answer="+ pollAnswer;
+
+	
+	var obj = document.getElementById("ownAnswer" + pollId);
+	if (obj!= null) {
+		params +="&ownAnswer="+obj.value;
+	}
+
+	if (pollAnswer == -1 && obj == null) {
+		return;
+	} 
+
+	if (pollAnswer == -1 && (obj.value == null || obj.value=="" )) {
+		alert("Please enter your own answer.");
+		return;
+	} 
+	
+	params += "&ajaxRequest=true&ajaxOut=getResultHtml3";
+	params += "&add=true&scriptSource=1&pollId=" + pollId;
+	
+	var url = "http://"+ target +"/pollVoteAction.html?"+params;
+
+	fadeXX("pollVoteFormFrame"+pollId, 500, displayPollResult, url);
+}
+
+function sendViewAndDisappear(pollId, target){
+	var params = "ajaxRequest=true&ajaxOut=getResultHtml3";
+	params += "&scriptSource=1&pollId=" + pollId;
+	
+	var url = "http://"+ target +"/pollVoteAction.html?"+params;
+
+	fadeXX("pollVoteFormFrame"+pollId, 500, displayPollResult, url);
+}
+
+function displayPollResult(url){
+	
+	var html_doc = document.getElementsByTagName('head').item(0);
+  	var js = document.createElement('script');
+  	js.setAttribute('type', 'text/javascript');
+  	js.setAttribute('src', url);
+	html_doc.appendChild(js);
+}
+
+/* AJAX */
+function sendVote(pollId, target){
+	var pollAnswer = getPollAnswer('pollVoteForm' + pollId);
+	if (pollAnswer == null) return;
+
+	var params = "answer="+ pollAnswer;
+
+	params += "&ajaxRequest=true&ajaxOut=getResultHtml3";
+	params += "&add=true&pollId=" + pollId;
+
+	alert(params);
+	sendPollAnswer("http://"+ target +"/pollVoteAction.html", params, false, "pollVoteFormFrame"+pollId, "resultDisplayPoll"+pollId);
+}
+
+/* AJAX */
+function sendPollAnswer(target, parms, disappear, elementId, resultElementId, callback) {
+	
+    var xmlHttpReq = false;
+    var self = this;
+    
+    if (window.XMLHttpRequest) {
+        self.xmlHttpReq = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    var strURL = target+ "?" + parms;
+    alert(strURL);
+    
+    self.xmlHttpReq.open('GET', target+"?" + parms , true);
+    self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    self.xmlHttpReq.onreadystatechange = function() {
+    	if (self.xmlHttpReq.readyState == 4) {
+    		alert(self.xmlHttpReq.responseText);
+    		if (disappear){
+        	fade(elementId, 200, function() {
+        		if (callback == null ) {
+        			updatepageXX(resultElementId, self.xmlHttpReq.responseText);
+        		}
+        		else
+        			callback(self.xmlHttpReq.responseText);
+        	});
+        	} else {
+        		if (callback == null )
+        			updatepageXX(resultElementId, self.xmlHttpReq.responseText);
+        		else
+        			callback(self.xmlHttpReq.responseText);
+        	}
+        }
+    }
+    self.xmlHttpReq.send();
+}
+
+/* ============================================================================== */
+function getPollAnswer(formId){
+
+	var formObj = document.getElementById(formId);
+	var val = getCheckedRadioValue(formObj.answer);
+	if (val!= null && val != ""){
+		return val;	
+	} else {
+		alert("Please select your vote. Thanks");
+		return null;
+	}
+}
+
+function getCheckedRadioValue(radioObj) {
+	if(!radioObj) return "";
+	
+	var radioLength = radioObj.length;
+	
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value;
+		else
+			return "";
+	
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+}
+
+function mouseover(obj){
+	obj.style.color="blue";
+}
+
+function mouseout(obj){
+	obj.style.color="#CF2B19";
+}
+
+function backToPoll(pollId){
+	document.getElementById("resultDisplayPoll" + pollId).innerHTML = "";
+	var eid = "pollVoteFormFrame" + pollId;
+	document.getElementById(eid).style.display = '';	
+	document.getElementById(eid).style.opacity = 1.0;	
+	document.getElementById(eid).style.filter = 1.0;	// For IE
+}
+
+/*  */
+function viewResults(target, serial){
+	window.open("http://"+ target +"/t_poll_result_single.html?prv_serial="+serial);
+}

@@ -1,0 +1,16 @@
+app.name=autosite
+app.environment=PROD
+
+
+app.cfg.default_page_width=800
+app.cfg.default_printer_width=800
+
+#static, file, db
+app.cfg.authentication=static
+app.cfg.view_manager=/view.properties
+app.init.class=com.autosite.app.AutoSiteInitiator
+app.action.insert.class=com.autosite.app.AutositeActionInsert
+#
+app.hibernate.cfg.file=/hibernate.cfg.xml
+app.resource.root=c:\ApacheTomcat\apache-tomcat-5.5.23\webapps\autosite\upload
+app.resource.web_root=upload

@@ -1,0 +1,147 @@
+package com.autosite.struts.action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import com.autosite.db.ForumComment;
+import com.autosite.db.Site;
+import com.autosite.ds.ForumCommentDS;
+import com.autosite.ds.SiteDS;
+import com.autosite.struts.action.core.AutositeCoreAction;
+import com.autosite.struts.form.ForumCommentForm;
+import com.jtrend.util.WebParamUtil;
+
+public class ForumCommentAction extends AutositeCoreAction {
+
+    public ActionForward ex(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+        ForumCommentForm _ForumCommentForm = (ForumCommentForm) form;
+        HttpSession session = request.getSession();
+
+        Site site = SiteDS.getInstance().registerSite(request.getServerName());
+        if (site == null ) {
+            sessionErrorText(session, "Internal error occurred. Please try once again");
+            return mapping.findForward("default");
+        }
+
+        if (hasRequestValue(request, "edit", "true")) {
+            edit(request, _ForumCommentForm);
+            setPage(session, "home");
+            return mapping.findForward("default");
+        }
+        else {
+
+/*
+            //             String paramPid = request.getParameter("pid");
+            long pid = -1;
+            Page page = PageDS.getInstance().getById(pid);
+
+            // Return page
+            if (page != null && page.getPageName().equals("XHOME")) {
+                setPage(session, "home");
+            }
+            else {
+                setPage(session, "dynamic_menu_content");
+            }
+
+            if (!isMissing(paramPid)) {
+                pid = Long.parseLong(paramPid);
+            }
+
+            if (isMissing(addDynContentForm.getContent())) {
+                sessionErrorText(session, "Add content");
+                return mapping.findForward("default");
+            }
+            else if (isMissing(addDynContentForm.getContent())) {
+                sessionErrorText(session, "Add content");
+                return mapping.findForward("default");
+            }
+
+            boolean html = false;
+            if (!isMissing(request.getParameter("html"))) {
+                html = true;
+            }
+
+
+            ForumComment _ForumComment = new ForumComment();
+
+            String contentStr = addDynContentForm.getContent();
+            if (!html) {
+                contentStr = contentStr.replace("\n", "<BR>");
+            }
+
+*/
+			ForumComment _ForumComment = new ForumComment();	
+
+//			_ForumComment.setSiteId(site.getId());
+            _ForumComment.setComment(WebParamUtil.getStringValue(_ForumCommentForm.getComment()));
+            _ForumComment.setTimeCreated(WebParamUtil.getDateValue(_ForumCommentForm.getTimeCreated()));
+
+            ForumCommentDS.getInstance().put(_ForumComment);
+        }
+        return mapping.findForward("default");
+    }
+
+    protected void edit(HttpServletRequest request, ForumCommentForm _ForumCommentForm) {
+
+        HttpSession session = request.getSession();
+/*
+        if (!isMissing(request.getParameter("cid"))) {
+
+            long cid = Long.parseLong(request.getParameter("cid"));
+            Content editCont = ContentDS.getInstance().getById(cid);
+
+            // Return page
+            long editPid = editCont.getPageId();
+            Page editPage = PageDS.getInstance().getById(editPid);
+            if (editPage != null && editPage.getPageName().equals("XHOME")) {
+                setPage(session, "home");
+            }
+            else {
+                setPage(session, "dynamic_menu_content");
+            }
+
+            if (editCont != null) {
+                m_logger.info("editing content found=" + editCont.getId());
+
+                editCont.setContentSubject(addDynContentForm.getTitle());
+                editCont.setContent(addDynContentForm.getContent());
+
+                editCont.setCategory(addDynContentForm.getCat());
+                editCont.setSourceName(addDynContentForm.getSourceName());
+                editCont.setSourceUrl(addDynContentForm.getSourceUrl());
+
+                editCont.setContentType(WebParamUtil.getIntValue(addDynContentForm.getContentType()));
+                editCont.setImageUrl(addDynContentForm.getImageUrl());
+                editCont.setImageHeight(WebParamUtil.getIntValue(addDynContentForm.getImageHeight()));
+                editCont.setImageWidth(WebParamUtil.getIntValue(addDynContentForm.getImageWidth()));
+
+                ContentDS.getInstance().update(editCont);
+            }
+
+        }
+        else {
+            sessionErrorText(session, "Invalid Request");
+        }
+*/
+
+            setPage(session, "home");
+
+            long cid = Long.parseLong(request.getParameter("id"));
+            ForumComment _ForumComment = ForumCommentDS.getInstance().getById(cid);
+
+            _ForumComment.setComment(WebParamUtil.getStringValue(_ForumCommentForm.getComment()));
+            _ForumComment.setTimeCreated(WebParamUtil.getDateValue(_ForumCommentForm.getTimeCreated()));
+           ForumCommentDS.getInstance().update(_ForumComment);
+    }
+
+    protected boolean loginRequired() {
+        return true;
+    }
+    private static Logger m_logger = Logger.getLogger( ForumCommentAction.class);
+}

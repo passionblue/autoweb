@@ -1,0 +1,112 @@
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="mailSenderFactory"
+		class=" com.autosite.mail.AutositeMailServiceFactory">
+		<property name="mailServicePool">
+			<map>
+				<entry key="support@littlejcleaner.com" 	value-ref="mailService-littlejcleaner.com" /> 
+				<entry key="joshua@jtrend.com" 				value-ref="mailService-jtrend.com" /> 
+				<entry key="passionbluedirect@gmail.com" 	value-ref="mailService-gmail.com" /> 
+				<entry key="_DEFAULT_" 						value-ref="mailService-jtrend.com" /> 
+			</map>
+		</property>
+	</bean>
+
+	<bean id="mailService-littlejcleaner.com" class="com.autosite.mail.impl.MailServiceImpl">
+		<property name="mailSender"      	ref="mailSender-littlejcleaner.com" />
+		<property name="simpleMailMessage" 	ref="customeMailMessage" />
+		<property name="mailFrom" 			value="support@littlejcleaner.com" />
+
+	</bean>
+
+	<bean id="mailService-jtrend.com" class="com.autosite.mail.impl.MailServiceImpl">
+		<property name="mailSender"      	ref="mailSender-jtrend.com" />
+		<property name="simpleMailMessage" 	ref="customeMailMessage" />
+		<property name="mailFrom" 			value="joshua@jtrend.com" />
+	</bean>
+
+	<bean id="mailService-gmail.com" class="com.autosite.mail.impl.MailServiceImpl">
+		<property name="mailSender"      	ref="mailSender-gmail.com" />
+		<property name="simpleMailMessage" 	ref="customeMailMessage" />
+		<property name="mailFrom" 			value="passionbluedirect@gmail.com" />
+	</bean>
+
+
+	<bean id="mailSender-littlejcleaner.com" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		
+		<!-- GoDADDY  -->
+		<property name="host" value="smtpout.secureserver.net" />
+		<property name="port" value="25" />
+		<property name="username" value="site@uppereastcleaner.com" />
+		<property name="password" value="mailp4ssw0rd" />
+		 	
+		<property name="javaMailProperties">
+			<props>
+            	<prop key="mail.smtp.auth">true</prop>
+            	<prop key="mail.smtp.starttls.enable">true</prop>
+        	   	<!-- prop key="mail.smtp.starttls.required">true</prop-->
+        	</props>
+		</property>
+		
+	</bean>
+	
+	<bean id="mailSender-jtrend.com" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+
+		<property name="host" value="smtp.1and1.com" />
+		<property name="port" value="587" />
+		<property name="username" value="joshua@jtrend.com" />
+		<property name="password" value="p4ssw0rd" />
+	 	
+		<property name="javaMailProperties">
+			<props>
+            	<prop key="mail.smtp.auth">true</prop>
+            	<prop key="mail.smtp.starttls.enable">true</prop>
+        	   	<!-- prop key="mail.smtp.starttls.required">true</prop-->
+        	</props>
+		</property>
+		
+	</bean>
+	
+	<bean id="mailSender-gmail.com" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+
+		<!-- Google Not Working from Autosite   -->
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="passionbluedirect@gmail.com" />
+		<property name="password" value="hyunkung" />
+		
+		<property name="javaMailProperties">
+			<props>
+            	<prop key="mail.smtp.auth">true</prop>
+            	<prop key="mail.smtp.starttls.enable">true</prop>
+        	   	<prop key="mail.smtp.starttls.required">true</prop>
+        	</props>
+		</property>
+		
+	</bean>
+	
+<!-- 	<bean id="mailMail" class="com.autosite.mail.impl.MailServiceImpl">
+		<property name="mailSender" ref="mailSender" />
+		<property name="simpleMailMessage" ref="customeMailMessage" />
+	</bean>
+ -->	
+	<bean id="customeMailMessage" class="org.springframework.mail.SimpleMailMessage">
+
+		<property name="from" 		value="joshua@jtrend.com" />
+		<property name="to" 		value="joshuayoo@yahoo.com" />
+		<property name="subject" 	value="Testing Subject" />
+		<property name="text">
+			<value>
+				<![CDATA[
+					Dear %s,
+					Mail Content : %s
+				]]>
+			</value>
+		</property>
+	</bean>
+	
+</beans>

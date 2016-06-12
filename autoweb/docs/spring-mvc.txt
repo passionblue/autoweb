@@ -1,0 +1,322 @@
+
+## -------------------------------------------------
+#### this note has been based on Spring MVC: A Tutorial book
+## -------------------------------------------------
+
+http://techbus.safaribooksonline.com/book/web-development/9780980839654
+
+## -------------------------------------------------
+## Benefits of Spring MVC
+## -------------------------------------------------
+
+1. Determine from the URI what action to invoke.
+2. Instantiate the correct controller class.
+3. Populate a form bean with request parameter values.
+4. Call the correct method in the controller object.
+5. Forward control to a view (JSP page).
+
+
+# interface
+
+org.springframework.web.servlet.mvc.Controller
+
+## -------------------------------------------------
+## web.xml
+## -------------------------------------------------
+
+<servlet>
+    <servlet-name>springmvc</servlet-name>
+    <servlet-class>
+        org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/config/simple-config.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>   
+</servlet>
+
+## sample spring config with view resolver
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean name="/product_input.action"            class="app03b.controller.InputProductController"/>
+    <bean name="/product_save.action"            class="app03b.controller.SaveProductController"/>
+    
+    <bean id="viewResolver"           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>
+
+
+## -------------------------------------------------
+## for Annotations
+## -------------------------------------------------
+
+<context:component-scan base-package="com.example.controller"/>
+
+@Controller
+@RequestMapping(value = "/customer_input")
+@RequestMapping(value="/order_process",  method={RequestMethod.POST, RequestMethod.PUT})
+
+## -------------------------------------------------
+## Request Handling
+## -------------------------------------------------
+
+Here is the list of argument types that can appear as arguments in a request-handling method.
+▪  javax.servlet.ServletRequest or javax.servlet.http.HttpServletRequest
+▪  javax.servlet.ServletResponse or javax.servlet.http.HttpServletResponse
+▪  javax.servlet.http.HttpSession
+▪  org.springframework.web.context.request.WebRequest or org.springframework.web.context.request.NativeWebRequest
+▪  java.util.Locale
+▪  java.io.InputStream or java.io.Reader
+▪  java.io.OutputStream or java.io.Writer
+▪  java.security.Principal
+▪  HttpEntity<?> parameters
+▪  java.util.Map / org.springframework.ui.Model / org.springframework.ui.ModelMap
+▪ org.springframework.web.servlet.mvc.support.RedirectAttributes
+▪ org.springframework.validation.Errors / org.springframework.validation.BindingResult
+▪  Command or form objects
+▪  org.springframework.web.bind.support.SessionStatus
+▪  org.springframework.web.util.UriComponentsBuilder
+▪  Types annotated with @PathVariable, @MatrixVariable, @RequestParam, @RequestHeader, @RequestBody, or @RequestPart.
+
+Of special importance is the org.springframework.ui.Model type. This is not a Servlet API type, but rather a Spring MVC type that contains a Map. Every time a request-handling method is invoked, Spring MVC creates a Model object and populates its Map with potentially various objects.
+A request-handling method can return one of these objects.
+▪  A ModelAndView object
+▪  A Model object
+▪  A Map containing the attributes of the model
+▪  A View object
+▪  A String representing the logical view name
+▪  void
+▪  An HttpEntity or ResponseEntity object to provide access to the Servlet response HTTP headers and contents
+▪  A Callable
+▪  A DeferredResult
+▪  Any other return type. In this case, the return value will be considered a model attribute to be exposed to the view 
+ 
+# configs that should be aware
+
+    <context:component-scan base-package="app04a.controller"/>
+    <mvc:annotation-driven/>
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/*.html" location="/"/>
+    
+    
+## -------------------------------------------------
+## dependency injection
+## -------------------------------------------------
+
+@Autowired
+@Service
+
+## -------------------------------------------------
+## request param annotations
+## -------------------------------------------------
+
+@PathVariable
+@RequestParam
+
+
+## -------------------------------------------------
+## custom model
+@ModelAttribute
+## -------------------------------------------------
+ 
+in the form (jsp) 
+	<form:form class="form-horizontal" method="post" modelAttribute="userForm" action="${userActionUrl}">
+	
+in the code
+	@RequestMapping(value = "/users", method = RequestMethod.POST)
+	public String saveOrUpdateUser(@ModelAttribute("userForm") @Validated User user, BindingResult result, Model model, final RedirectAttributes redirectAttributes) {
+	
+## -------------------------------------------------
+## second use of ModelAttribute Annotations
+## -------------------------------------------------
+
+The second use of @ModelAttribute is to annotate a non-request-handling method. Methods annotated with @ModelAttribute will be invoked every time a request-handling 
+method in the same controller class is invoked. This means, if a controller class has two request-handling methods and another method annotated with @ModelAttribute method, 
+the annotated method will likely be invoked more often than each of the request-handling methods. A method annotated with @ModelAttribute will be invoked right before a 
+request-handling method. Such a method may return an object or have a void return type. If it returns an object, the object is automatically added to the Model that was 
+created for the request-handling method. For example, the return value of this method will be added to the Model.
+
+@ModelAttribute
+public Product addProduct(@RequestParam String productId) {
+    return productService.get(productId);
+}
+If your annotated method returns void, then you must also add a Model argument type and add the instance yourself. Here is an example.
+
+@ModelAttribute
+public void populateModel(@RequestParam String id, Model model) er);
+    model.addAttribute(new Account(id));
+}	
+
+
+## -------------------------------------------------
+## need to more work on FORMATTER and CONVERTER
+## -------------------------------------------------
+
+## -------------------------------------------------
+## Validation ---????????????????????? need to do more study Chapter 7 of the book and MKYONG example of @Validated, ValidationUtils, Validator class, 
+## -------------------------------------------------
+
+public class ProductValidator implements Validator {}
+
+
+# resource files from properties. These values are used for validations. 
+
+
+<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+    <property name="basename" value="/WEB-INF/resource/messages"/>
+</bean>
+
+or be loaded from the code
+
+
+	@Bean
+	public ResourceBundleMessageSource messageSource() {
+		ResourceBundleMessageSource rb = new ResourceBundleMessageSource();
+		rb.setBasenames(new String[] { "messages/messages", "messages/validation" });
+		return rb;
+	}
+
+
+# install validator, add following 
+
+
+    @Autowired
+    TaskFormValidator taskFormValidator;
+    
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(taskFormValidator);
+    }    
+
+# add @Validated to a task, other wise validator will not be called. 
+
+
+### error, when validation failed, it return error code 400, instead of calling the function with BindingResult
+
+-- Pay attention to the parameter position of the method first example is BAD
+
+
+    //BAD
+    @RequestMapping(value = "/task/add", method = RequestMethod.POST)
+    public String addTask(@ModelAttribute("taskForm") @Validated MyTask taskForm,  
+             Model model,  BindingResult result, final RedirectAttributes redirectAttributes ) {
+    //GOOD   
+    @RequestMapping(value = "/task/add", method = RequestMethod.POST)
+    public String addTask(@ModelAttribute("taskForm") @Validated MyTask taskForm,  
+            BindingResult result,  Model model, final RedirectAttributes redirectAttributes ) {            
+
+## then in the controller
+
+        if (result.hasErrors()) {
+            // common error redirect would lose the results
+            return "/task/start";
+        }
+	
+	
+	
+
+## -------------------------------------------------
+## Default object available in jsp pages 
+## -------------------------------------------------
+pageContext - The javax.servlet.jsp.PageContext object for the current JSP.
+initParam - A Map containing all context initialization parameters with the parameter names as the keys.
+param - A Map containing all request parameters with the parameters names as the keys. The value for each key is the first parameter value of the specified name. Therefore, if there are two request parameters with the same name, only the first can be retrieved using the param object. For accessing all parameter values that share the same name, use the params object instead.
+paramValues - A Map containing all request parameters with the parameter names as the keys. The value for each key is an array of strings containing all the values for the specified parameter name. If the parameter has only one value, it still returns an array having one element.
+header - A Map containing the request headers with the header names as the keys. The value for each key is the first header of the specified header name. In other words, if a header has more than one value, only the first value is returned. To obtain multi-value headers, use the headerValues object instead.
+headerValues - A Map containing all request headers with the header names as the keys. The value for each key is an array of strings containing all the values for the specified header name. If the header has only one value, it returns a one-element array.
+cookie - 
+A Map containing all Cookie objects in the current request object. The cookies' names are the Map's keys, and each key is mapped to a Cookie object.
+applicationScope - A Map that contains all attributes in the ServletContext object with the attribute names as the keys.
+sessionScope - A Map that contains all the attributes in the HttpSession object in which the attribute names are the keys.
+requestScope - A Map that contains all the attributes in the current HttpServletRequest object with the attribute names as the keys.
+pageScope - A Map that contains all attributes with the page scope. The attributes' names are the keys of the Map.
+
+request javax.servlet.http.HttpServletRequest
+response javax.servlet.http.HttpServletResponse
+out javax.servlet.jsp.JspWriter
+session javax.servlet.http.HttpSession
+application javax.servlet.ServletContext
+config javax.servlet.ServletConfig
+pageContext javax.servlet.jsp.PageContext
+page javax.servlet.jsp.HttpJspPage
+exception java.lang.Throwable
+
+
+## -------------------------------------------------
+## Problem Resolve
+## -------------------------------------------------
+
+##  Neither BindingResult nor plain target object for bean name 'taskForm' available as request attribute
+
+    @ModelAttribute
+    public MyTask createMyTask(Model model) {
+        model.addAttribute("taskForm", new MyTask());
+        return new MyTask("XX " + timestamp);
+    }  
+
+##   Invalid property 'id' of bean class [com.mkyong.form.model.MyTask]: Bean property 'id' is not readable or has an invalid getter method: Does the return type of the getter match the parameter type of the setter?
+Not sure why this was asked. 
+
+
+## -------------------------------------------------
+## Session Object
+## -------------------------------------------------
+
+http://stackoverflow.com/questions/18791645/how-to-use-session-attributes-in-spring-mvc
+
+@Controller
+@Scope("session")
+
+
+@Component
+@Scope("session")
+public class User
+ {
+    String user;
+    /*  setter getter*/
+  }
+  
+  
+@Autowired
+private User user
+   
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+  <bean id="user"    class="com.User" scope="session">     
+      <aop:scoped-proxy/>
+  </bean>
+</beans>   
+
+But it worked, but somehow the point of instantiation is little cryptic to me still.
+
+ 
+
+## -------------------------------------------------
+## Error pages for http error	
+## -------------------------------------------------
+
+	<error-page>
+		<error-code>400</error-code>
+		<location>/WEB-INF/views/jsp/error2.jsp</location>
+	</error-page>
+
+
+
+
+
+
+
+

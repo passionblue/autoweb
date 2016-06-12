@@ -1,0 +1,25 @@
+/*
+
+*/
+
+div.list-container,div.list-frame {
+	margin: 10px 0px 10px 0px;
+	
+}
+
+div.list-item {
+	
+	text-indent: 30px;
+	margin-bottom: 10px;
+	padding: 10px 0px 10px 0px;
+	background: #aaffaa url('/images/arrow.gif') no-repeat scroll left;
+}
+
+div.list-item a {
+	font: normal 1em Verdana; 
+	color: black;
+}
+div.list-item a:HOVER {
+	color: red;
+	text-decoration: none;
+}
