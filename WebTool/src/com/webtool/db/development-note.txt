@@ -1,0 +1,19 @@
+// Make first time working
+
+1. files in db package
+2. config files spring-config-hsql.xml -> change component scan to proper package anme
+   need persistence.xml file -> add bean class to persist. ** need to figure out specify by package. otherwise, have to update all the time. 
+3. make sure annontation required for Transaction in FixMsgDao. Otherwise, no transaction error 
+	@Transactional(propagation = Propagation.REQUIRED)
+	
+
+	// Issues
+	
+1. Transaction not there exception 
+	
+1. fix_message is not mapped - failed raised in         List<FIXMsgEntry> all = fixMsgPersistService.getDbOutDao().selectAll();
+	(1) issue was SQL should use the class name not the actual table name.
+	(2) When I had fields like select id,time,type,fix from FixMsgEntry -> returned objects are in "Object". 
+	    so changed the sql to "select f from FIXMsgEntry f". then correctly mapped to the class
+		    
+	
